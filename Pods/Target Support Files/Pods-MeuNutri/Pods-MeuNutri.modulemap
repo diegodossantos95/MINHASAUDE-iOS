@@ -1,0 +1,6 @@
+framework module Pods_MeuNutri {
+  umbrella header "Pods-MeuNutri-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */; };
+		AF67DFD22304FCDF0046BB92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFD12304FCDF0046BB92 /* ViewController.swift */; };
+		AF67DFD52304FCDF0046BB92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD32304FCDF0046BB92 /* Main.storyboard */; };
+		AF67DFD72304FCE20046BB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD62304FCE20046BB92 /* Assets.xcassets */; };
+		AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */; };
+		AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFE1230506330046BB92 /* GoogleService-Info.plist */; };
+		D2927984DB95659245547A0F /* Pods_MeuNutri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1746958EAE7DC994A9ED72AC /* Pods-MeuNutri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuNutri.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeuNutri/Pods-MeuNutri.release.xcconfig"; sourceTree = "<group>"; };
+		AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuNutri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF67DFD12304FCDF0046BB92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF67DFD42304FCDF0046BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF67DFD62304FCE20046BB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF67DFD92304FCE20046BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF67DFDB2304FCE20046BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF67DFE1230506330046BB92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeuNutri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuNutri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeuNutri/Pods-MeuNutri.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF67DFC92304FCDF0046BB92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2927984DB95659245547A0F /* Pods_MeuNutri.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		556930493A8C8FE5E43BFC80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80CB74872358ED0E567E28B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */,
+				1746958EAE7DC994A9ED72AC /* Pods-MeuNutri.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF67DFC32304FCDF0046BB92 = {
+			isa = PBXGroup;
+			children = (
+				AF67DFCE2304FCDF0046BB92 /* MeuNutri */,
+				AF67DFCD2304FCDF0046BB92 /* Products */,
+				80CB74872358ED0E567E28B0 /* Pods */,
+				556930493A8C8FE5E43BFC80 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF67DFCD2304FCDF0046BB92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF67DFCE2304FCDF0046BB92 /* MeuNutri */ = {
+			isa = PBXGroup;
+			children = (
+				AF67DFE1230506330046BB92 /* GoogleService-Info.plist */,
+				AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */,
+				AF67DFD12304FCDF0046BB92 /* ViewController.swift */,
+				AF67DFD32304FCDF0046BB92 /* Main.storyboard */,
+				AF67DFD62304FCE20046BB92 /* Assets.xcassets */,
+				AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */,
+				AF67DFDB2304FCE20046BB92 /* Info.plist */,
+			);
+			path = MeuNutri;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF67DFCB2304FCDF0046BB92 /* MeuNutri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF67DFDE2304FCE20046BB92 /* Build configuration list for PBXNativeTarget "MeuNutri" */;
+			buildPhases = (
+				F2B2C227567F9BD05BDA68A3 /* [CP] Check Pods Manifest.lock */,
+				AF67DFC82304FCDF0046BB92 /* Sources */,
+				AF67DFC92304FCDF0046BB92 /* Frameworks */,
+				AF67DFCA2304FCDF0046BB92 /* Resources */,
+				D01A2DEB7C4DB0A0667C5B9A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeuNutri;
+			productName = MeuNutri;
+			productReference = AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF67DFC42304FCDF0046BB92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = Diego;
+				TargetAttributes = {
+					AF67DFCB2304FCDF0046BB92 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = AF67DFC72304FCDF0046BB92 /* Build configuration list for PBXProject "MeuNutri" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF67DFC32304FCDF0046BB92;
+			productRefGroup = AF67DFCD2304FCDF0046BB92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF67DFCB2304FCDF0046BB92 /* MeuNutri */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF67DFCA2304FCDF0046BB92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */,
+				AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */,
+				AF67DFD72304FCE20046BB92 /* Assets.xcassets in Resources */,
+				AF67DFD52304FCDF0046BB92 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D01A2DEB7C4DB0A0667C5B9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeuNutri/Pods-MeuNutri-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MeuNutri/Pods-MeuNutri-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MeuNutri/Pods-MeuNutri-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2B2C227567F9BD05BDA68A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MeuNutri-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF67DFC82304FCDF0046BB92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF67DFD22304FCDF0046BB92 /* ViewController.swift in Sources */,
+				AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AF67DFD32304FCDF0046BB92 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF67DFD42304FCDF0046BB92 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF67DFD92304FCE20046BB92 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF67DFDC2304FCE20046BB92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF67DFDD2304FCE20046BB92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF67DFDF2304FCE20046BB92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HBGDXL9LHD;
+				INFOPLIST_FILE = MeuNutri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.MeuNutri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF67DFE02304FCE20046BB92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1746958EAE7DC994A9ED72AC /* Pods-MeuNutri.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = HBGDXL9LHD;
+				INFOPLIST_FILE = MeuNutri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.MeuNutri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF67DFC72304FCDF0046BB92 /* Build configuration list for PBXProject "MeuNutri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF67DFDC2304FCE20046BB92 /* Debug */,
+				AF67DFDD2304FCE20046BB92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF67DFDE2304FCE20046BB92 /* Build configuration list for PBXNativeTarget "MeuNutri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF67DFDF2304FCE20046BB92 /* Debug */,
+				AF67DFE02304FCE20046BB92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF67DFC42304FCDF0046BB92 /* Project object */;
+}
