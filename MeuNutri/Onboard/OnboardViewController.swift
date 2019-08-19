@@ -32,5 +32,20 @@ extension OnboardViewController: FUIAuthDelegate {
 
         print("handle user signup / login")
 
+
+        //Code used to call function
+        var functions = Functions.functions()
+        functions.httpsCallable("mobileAPI").call() { (result, error) in
+            if let error = error as NSError? {
+                if error.domain == FunctionsErrorDomain {
+                    let code = FunctionsErrorCode(rawValue: error.code)
+                    let message = error.localizedDescription
+                    let details = error.userInfo[FunctionsErrorDetailsKey]
+                }
+            }
+            if let data = result?.data {
+                print(data)
+            }
+        }
     }
 }
