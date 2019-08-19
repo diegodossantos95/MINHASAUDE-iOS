@@ -12,7 +12,7 @@ import FirebaseUI
 protocol OnboardPresenterProtocol {
     var view: (OnboardViewProtocol & FUIAuthDelegate & UIViewController)? { get set }
 
-    func loginDidTouch()
+    func viewDidAppear()
 }
 
 class OnboardPresenter: OnboardPresenterProtocol {
@@ -21,7 +21,7 @@ class OnboardPresenter: OnboardPresenterProtocol {
         FUIEmailAuth()
     ]
 
-    func loginDidTouch() {
+    func viewDidAppear() {
         startLoginFlow()
     }
 

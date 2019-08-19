@@ -96,11 +96,11 @@
 			isa = PBXGroup;
 			children = (
 				AF20380F2309FC98006A1ACD /* Onboard */,
-				AF67DFE1230506330046BB92 /* GoogleService-Info.plist */,
 				AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */,
 				AF67DFD62304FCE20046BB92 /* Assets.xcassets */,
 				AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */,
 				AF67DFDB2304FCE20046BB92 /* Info.plist */,
+				AF67DFE1230506330046BB92 /* GoogleService-Info.plist */,
 			);
 			path = MeuNutri;
 			sourceTree = "<group>";

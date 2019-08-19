@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseUI
+import FirebaseFunctions
 
 protocol OnboardViewProtocol {
     var presenter: OnboardPresenterProtocol? { get set }
@@ -16,8 +17,9 @@ protocol OnboardViewProtocol {
 class OnboardViewController: UIViewController, OnboardViewProtocol {
     var presenter: OnboardPresenterProtocol?
 
-    @IBAction func loginDidTouch(_ sender: UIButton) {
-        presenter?.loginDidTouch()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter?.viewDidAppear()
     }
 }
 
@@ -29,9 +31,6 @@ extension OnboardViewController: FUIAuthDelegate {
         }
 
         print("handle user signup / login")
-    }
 
-    func authUI(_ authUI: FUIAuth, didFinish operation: FUIAccountSettingsOperationType, error: Error?) {
-        print(operation)
     }
 }
