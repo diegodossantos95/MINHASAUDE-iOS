@@ -10,6 +10,7 @@
 		AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */; };
 		AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */; };
 		AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203819230CE4F6006A1ACD /* HealthDataService.swift */; };
+		AF20381D230CF521006A1ACD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF20381C230CF521006A1ACD /* HealthKit.framework */; };
 		AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */; };
 		AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */; };
 		AF67DFD52304FCDF0046BB92 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD32304FCDF0046BB92 /* Onboard.storyboard */; };
@@ -24,6 +25,8 @@
 		AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPresenter.swift; sourceTree = "<group>"; };
 		AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardBuilder.swift; sourceTree = "<group>"; };
 		AF203819230CE4F6006A1ACD /* HealthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
+		AF20381B230CF521006A1ACD /* MeuNutri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeuNutri.entitlements; sourceTree = "<group>"; };
+		AF20381C230CF521006A1ACD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuNutri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2927984DB95659245547A0F /* Pods_MeuNutri.framework in Frameworks */,
+				AF20381D230CF521006A1ACD /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +55,7 @@
 		556930493A8C8FE5E43BFC80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF20381C230CF521006A1ACD /* HealthKit.framework */,
 				B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */,
 			);
 			name = Frameworks;
@@ -105,6 +110,7 @@
 		AF67DFCE2304FCDF0046BB92 /* MeuNutri */ = {
 			isa = PBXGroup;
 			children = (
+				AF20381B230CF521006A1ACD /* MeuNutri.entitlements */,
 				AF203818230CE48F006A1ACD /* Services */,
 				AF20380F2309FC98006A1ACD /* Onboard */,
 				AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */,
@@ -151,6 +157,11 @@
 				TargetAttributes = {
 					AF67DFCB2304FCDF0046BB92 = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -397,6 +408,7 @@
 			baseConfigurationReference = E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MeuNutri/MeuNutri.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HBGDXL9LHD;
 				INFOPLIST_FILE = MeuNutri/Info.plist;
@@ -416,6 +428,7 @@
 			baseConfigurationReference = 1746958EAE7DC994A9ED72AC /* Pods-MeuNutri.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MeuNutri/MeuNutri.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HBGDXL9LHD;
 				INFOPLIST_FILE = MeuNutri/Info.plist;

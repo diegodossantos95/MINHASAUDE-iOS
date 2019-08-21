@@ -12,7 +12,33 @@ import HealthKit
 class HealthKitService {
     //MARK: Private properties
     private let healthKitDataStore: HKHealthStore?
-    private let readableHKCharacteristicTypes: Set<HKQuantityType> = [HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!]
+    private let readableHKCharacteristicTypes: Set<HKQuantityType> = [
+        // Medidas
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!, //Peso
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!, //IMC
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyFatPercentage)!, //% de gordura
+
+        // Sinais vitais
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, //Batimentos
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.restingHeartRate)!, //Batimentos em descanso
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.walkingHeartRateAverage)!, //Batimentos em caminhada
+
+        // Nutrição
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCarbohydrates)!, //Carboidratos
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCholesterol)!, //Colesterol Alimentar
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!, //Energia Alimentar
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatSaturated)!, //Gordura Saturada
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatTotal)!, //Gordura Total
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFiber)!, //Fibra
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!, //Proteina
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium)!, //Sodio
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!, //Acucar
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)!, //Agua
+
+        // Atividade
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!, //Energia ativa
+        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.appleExerciseTime)!, //Minutos de exercicio
+    ]
     // In the Apple documentation you can find every type available: https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier
 
     //MARK: Init
