@@ -24,16 +24,19 @@ class OnboardPresenter: OnboardPresenterProtocol {
     func viewDidAppear() {
 //        startLoginFlow()
 
-        let service = HealthKitService()
-        service.requestPermission { (success, error) in
-            service.readHealthData(type: .appleExerciseTime) { (samples, error) in
-                if let samples = samples {
-                    print(samples)
-                } else {
-                    print(error)
-                }
-            }
-        }
+//        let service = HealthKitService()
+//        service.requestPermission { (success, error) in
+//            service.readHealthData(type: .appleExerciseTime) { (samples, error) in
+//                if let samples = samples {
+//                    print(samples)
+//                } else {
+//                    print(error)
+//                }
+//            }
+//        }
+
+        UploadService.shared.upload()
+
     }
 
     private func startLoginFlow() {

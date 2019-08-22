@@ -9,7 +9,10 @@
 import Foundation
 import HealthKit
 
-class HealthKitService {
+class HealthDataService {
+    //MARK: Singleton
+    static let shared = HealthDataService()
+
     //MARK: Private properties
     private let notAvailableError = NSError(domain: "com.diegodossantos.MeuNutri", code: 9999, userInfo: [NSLocalizedDescriptionKey: "HealthStore not available"])
     private let healthKitDataStore: HKHealthStore?
@@ -41,7 +44,7 @@ class HealthKitService {
     // In the Apple documentation you can find every type available: https://developer.apple.com/documentation/healthkit/hkquantitytypeidentifier
 
     //MARK: Init
-    init() {
+    private init() {
         if HKHealthStore.isHealthDataAvailable() {
             healthKitDataStore = HKHealthStore()
         } else {

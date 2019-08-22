@@ -16,12 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         FirebaseApp.configure()
-
-//        if Auth.auth().currentUser != nil {
-//            print("logado")
-//        } else {
-        window?.rootViewController = OnboardBuilder().build()
-        window?.makeKeyAndVisible()
+        HealthDataService.shared.requestPermission { [unowned self] (success, error) in
+            if let error = error {
+                print(error)
+            } else {
+                DispatchQueue.main.async { [unowned self] in
+                    self.window?.rootViewController = OnboardBuilder().build()
+                    self.window?.makeKeyAndVisible()
+                }
+            }
+        }
 
         return true
     }
