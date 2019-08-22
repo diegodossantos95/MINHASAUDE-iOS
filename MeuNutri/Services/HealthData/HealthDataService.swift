@@ -11,6 +11,7 @@ import HealthKit
 
 class HealthKitService {
     //MARK: Private properties
+    private let notAvailableError = NSError(domain: "com.diegodossantos.MeuNutri", code: 9999, userInfo: [NSLocalizedDescriptionKey: "HealthStore not available"])
     private let healthKitDataStore: HKHealthStore?
     private let readableHKCharacteristicTypes: Set<HKQuantityType> = [
         // Medidas
@@ -20,8 +21,6 @@ class HealthKitService {
 
         // Sinais vitais
         HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!, //Batimentos
-        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.restingHeartRate)!, //Batimentos em descanso
-        HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.walkingHeartRateAverage)!, //Batimentos em caminhada
 
         // Nutrição
         HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCarbohydrates)!, //Carboidratos
@@ -45,39 +44,61 @@ class HealthKitService {
     init() {
         if HKHealthStore.isHealthDataAvailable() {
             healthKitDataStore = HKHealthStore()
-            healthKitDataStore?.requestAuthorization(toShare: nil,
-                                                     read: readableHKCharacteristicTypes,
-                                                     completion: authRequestCompletion)
         } else {
             healthKitDataStore = nil
         }
     }
 
     //MARK: Public functions
-    func readHeartRateData() {
-        let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-
-        let query = HKAnchoredObjectQuery(type: heartRateType, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit) {
-            (query, samplesOrNil, deletedObjectsOrNil, newAnchor, errorOrNil) in
-
-            if let samples = samplesOrNil {
-                for heartRateSamples in samples {
-                    print(heartRateSamples)
-                }
-            } else {
-                print("No heart rate sample available.")
-            }
+    func requestPermission(completion: @escaping (Bool, Error?) -> Void) {
+        guard let _ = healthKitDataStore else {
+            completion(false, notAvailableError)
+            return
         }
+
+        healthKitDataStore?.requestAuthorization(toShare: nil,
+                                                 read: readableHKCharacteristicTypes,
+                                                 completion: completion)
+    }
+
+    func readHealthData(type: HKQuantityTypeIdentifier, completionHandler: @escaping ([HKSample]?, Error?) -> Void) {
+        guard let _ = healthKitDataStore,
+            let healthDataType = HKQuantityType.quantityType(forIdentifier: type) else {
+                completionHandler(nil, notAvailableError)
+                return
+        }
+
+        let query = HKAnchoredObjectQuery(type: healthDataType, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit) {
+            (query, samplesOrNil, deletedObjectsOrNil, newAnchor, errorOrNil) in
+            completionHandler(samplesOrNil, errorOrNil)
+        }
+
 
         healthKitDataStore?.execute(query)
     }
+}
 
-    //MARK: Private functions
-    private func authRequestCompletion(success: Bool, error: Error?) {
-        if success {
-            print("Successful authorization.")
-        } else {
-            print(error.debugDescription)
+/*
+let now = Date()
+let exactlySevenDaysAgo = Calendar.current.date(byAdding: DateComponents(day: -7), to: now)!
+let startOfSevenDaysAgo = Calendar.current.startOfDay(for: exactlySevenDaysAgo)
+let predicate = HKQuery.predicateForSamples(withStart: startOfSevenDaysAgo, end: now, options: .strictStartDate)
+let query = HKStatisticsCollectionQuery.init(quantityType: healthDataType,
+                                             quantitySamplePredicate: predicate,
+                                             options: .cumulativeSum,
+                                             anchorDate: startOfSevenDaysAgo,
+                                             intervalComponents: DateComponents(day: 1))
+query.initialResultsHandler = { query, results, error in
+    guard let statsCollection = results else {
+        // Perform proper error handling here...
+        return
+    }
+
+    statsCollection.enumerateStatistics(from: startOfSevenDaysAgo, to: now) { statistics, stop in
+
+        if let quantity = statistics.sumQuantity() {
+            let stepValue = quantity.doubleValue(for: HKUnit.count())
+            // ...
         }
     }
-}
+}*/

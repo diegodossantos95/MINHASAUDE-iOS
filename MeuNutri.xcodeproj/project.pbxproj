@@ -11,6 +11,7 @@
 		AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */; };
 		AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203819230CE4F6006A1ACD /* HealthDataService.swift */; };
 		AF20381D230CF521006A1ACD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF20381C230CF521006A1ACD /* HealthKit.framework */; };
+		AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF20381F230E2F94006A1ACD /* HealthMeasure.swift */; };
 		AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */; };
 		AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */; };
 		AF67DFD52304FCDF0046BB92 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD32304FCDF0046BB92 /* Onboard.storyboard */; };
@@ -27,6 +28,7 @@
 		AF203819230CE4F6006A1ACD /* HealthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
 		AF20381B230CF521006A1ACD /* MeuNutri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeuNutri.entitlements; sourceTree = "<group>"; };
 		AF20381C230CF521006A1ACD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		AF20381F230E2F94006A1ACD /* HealthMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthMeasure.swift; path = "/Users/i848202/Documents/Dev/FinalProject-iOS/MeuNutri/Services/HealthData/HealthMeasure.swift"; sourceTree = "<absolute>"; };
 		AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuNutri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -84,9 +86,18 @@
 		AF203818230CE48F006A1ACD /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AF203819230CE4F6006A1ACD /* HealthDataService.swift */,
+				AF20381E230E2F4C006A1ACD /* HealthData */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AF20381E230E2F4C006A1ACD /* HealthData */ = {
+			isa = PBXGroup;
+			children = (
+				AF20381F230E2F94006A1ACD /* HealthMeasure.swift */,
+				AF203819230CE4F6006A1ACD /* HealthDataService.swift */,
+			);
+			path = HealthData;
 			sourceTree = "<group>";
 		};
 		AF67DFC32304FCDF0046BB92 = {
@@ -261,6 +272,7 @@
 				AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */,
 				AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */,
 				AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */,
+				AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */,
 				AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

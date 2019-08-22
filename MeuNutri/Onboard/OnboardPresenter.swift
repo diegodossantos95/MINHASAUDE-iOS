@@ -22,7 +22,18 @@ class OnboardPresenter: OnboardPresenterProtocol {
     ]
 
     func viewDidAppear() {
-        startLoginFlow()
+//        startLoginFlow()
+
+        let service = HealthKitService()
+        service.requestPermission { (success, error) in
+            service.readHealthData(type: .appleExerciseTime) { (samples, error) in
+                if let samples = samples {
+                    print(samples)
+                } else {
+                    print(error)
+                }
+            }
+        }
     }
 
     private func startLoginFlow() {
