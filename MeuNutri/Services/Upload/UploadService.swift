@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseFunctions
+import FirebaseFirestore
 
 class UploadService {
     //MARK: Singleton
@@ -23,16 +24,14 @@ class UploadService {
     }
 
     func upload() {
-        functions.httpsCallable("mobileAPI").call(["text": "OLAR"]) { (result, error) in
-            if let error = error as NSError? {
-                if error.domain == FunctionsErrorDomain {
-                    let code = FunctionsErrorCode(rawValue: error.code)
-                    let message = error.localizedDescription
-                    let details = error.userInfo[FunctionsErrorDetailsKey]
-                }
-            }
-            if let text = (result?.data as? [String: Any])?["olar"] as? String {
-                print(text)
+        let data = [
+            HealthMeasure(unit: "kg", value: 60, date: Date.init(timeIntervalSinceNow: 1)).asDictionary,
+            HealthMeasure(unit: "kg", value: 80, date: Date.init(timeIntervalSinceNow: 999999)).asDictionary
+        ]
+
+        Firestore.firestore().collection("healthData").document("weight").setData(["data": data]) { (error) in
+            if let error = error {
+                print(error)
             }
         }
     }
