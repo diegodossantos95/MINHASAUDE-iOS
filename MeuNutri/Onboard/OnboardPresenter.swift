@@ -25,15 +25,9 @@ class OnboardPresenter: OnboardPresenterProtocol {
 //        startLoginFlow()
 
         HealthDataService.shared.requestPermission { (success, error) in
-//            service.readHealthData(type: .appleExerciseTime) { (samples, error) in
-//                if let samples = samples {
-//                    print(samples)
-//                } else {
-//                    print(error)
-//                }
-//            }
-
-            SyncDataService.shared.syncHealthData()
+            SyncDataService.shared.syncHealthData(completion: { (success) in
+                print("Uploaded? \(success)")
+            })
         }
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF0E9E34230F672400805E03 /* SyncDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E9E33230F672400805E03 /* SyncDataService.swift */; };
+		AF0E9E36230F9B7E00805E03 /* HealthDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E9E35230F9B7E00805E03 /* HealthDataManager.swift */; };
 		AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */; };
 		AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */; };
 		AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203819230CE4F6006A1ACD /* HealthDataService.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		1746958EAE7DC994A9ED72AC /* Pods-MeuNutri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuNutri.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeuNutri/Pods-MeuNutri.release.xcconfig"; sourceTree = "<group>"; };
 		AF0E9E33230F672400805E03 /* SyncDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncDataService.swift; sourceTree = "<group>"; };
+		AF0E9E35230F9B7E00805E03 /* HealthDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataManager.swift; sourceTree = "<group>"; };
 		AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPresenter.swift; sourceTree = "<group>"; };
 		AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardBuilder.swift; sourceTree = "<group>"; };
 		AF203819230CE4F6006A1ACD /* HealthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			children = (
 				AF20381F230E2F94006A1ACD /* HealthMeasure.swift */,
 				AF203819230CE4F6006A1ACD /* HealthDataService.swift */,
+				AF0E9E35230F9B7E00805E03 /* HealthDataManager.swift */,
 			);
 			path = HealthData;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */,
 				AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */,
 				AF0E9E34230F672400805E03 /* SyncDataService.swift in Sources */,
+				AF0E9E36230F9B7E00805E03 /* HealthDataManager.swift in Sources */,
 				AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */,
 				AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */,
 				AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */,
