@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import FirebaseFunctions
 import FirebaseFirestore
 
 class UploadService {
@@ -15,24 +14,17 @@ class UploadService {
     static let shared = UploadService()
 
     //MARK: Private properties
-    private var functions: Functions
+    private var firestore: Firestore
+    private let healthDataCollection = "healthData"
 
     //MARK: Init
     private init() {
-        functions = Functions.functions()
-        functions.useFunctionsEmulator(origin: "http://localhost:5001")
+        firestore = Firestore.firestore()
     }
 
-    func upload() {
-        let data = [
-            HealthMeasure(unit: "kg", value: 60, date: Date.init(timeIntervalSinceNow: 1)).asDictionary,
-            HealthMeasure(unit: "kg", value: 80, date: Date.init(timeIntervalSinceNow: 999999)).asDictionary
-        ]
+    func uploadHealthData(name: String, data: [HealthMeasure], completion: @escaping (Error?) -> Void) {
+        let mappedData = data.map { $0.asDictionary }
 
-        Firestore.firestore().collection("healthData").document("weight").setData(["data": data]) { (error) in
-            if let error = error {
-                print(error)
-            }
-        }
+        firestore.collection(healthDataCollection).document(name).setData(["data": mappedData], completion: completion)
     }
 }
