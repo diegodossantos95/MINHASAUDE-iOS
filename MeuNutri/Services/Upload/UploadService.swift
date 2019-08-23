@@ -22,6 +22,7 @@ class UploadService {
         firestore = Firestore.firestore()
     }
 
+    //MARK: Public functions
     func uploadHealthData(name: String, data: [HealthMeasure], completion: @escaping (Error?) -> Void) {
         let mappedData = data.map { $0.asDictionary }
 

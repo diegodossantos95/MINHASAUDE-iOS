@@ -64,18 +64,21 @@ class HealthDataService {
                                                  completion: completion)
     }
 
-    func readHealthData(type: HKQuantityTypeIdentifier, completionHandler: @escaping ([HKSample]?, Error?) -> Void) {
+    func readHealthData(type: HKQuantityTypeIdentifier, completionHandler: @escaping ([HKQuantitySample]?, Error?) -> Void) {
         guard let _ = healthKitDataStore,
             let healthDataType = HKQuantityType.quantityType(forIdentifier: type) else {
                 completionHandler(nil, notAvailableError)
                 return
         }
 
-        let query = HKAnchoredObjectQuery(type: healthDataType, predicate: nil, anchor: nil, limit: HKObjectQueryNoLimit) {
+        let query = HKAnchoredObjectQuery(type: healthDataType, predicate: nil, anchor: nil, limit: 100) {
             (query, samplesOrNil, deletedObjectsOrNil, newAnchor, errorOrNil) in
-            completionHandler(samplesOrNil, errorOrNil)
+            if let samples = samplesOrNil as? [HKQuantitySample] {
+                completionHandler(samples, nil)
+            } else {
+                //TODO
+            }
         }
-
 
         healthKitDataStore?.execute(query)
     }

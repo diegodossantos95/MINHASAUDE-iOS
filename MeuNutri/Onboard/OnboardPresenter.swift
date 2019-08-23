@@ -24,8 +24,7 @@ class OnboardPresenter: OnboardPresenterProtocol {
     func viewDidAppear() {
 //        startLoginFlow()
 
-//        let service = HealthKitService()
-//        service.requestPermission { (success, error) in
+        HealthDataService.shared.requestPermission { (success, error) in
 //            service.readHealthData(type: .appleExerciseTime) { (samples, error) in
 //                if let samples = samples {
 //                    print(samples)
@@ -33,9 +32,10 @@ class OnboardPresenter: OnboardPresenterProtocol {
 //                    print(error)
 //                }
 //            }
-//        }
 
-        UploadService.shared.upload()
+            SyncDataService.shared.syncHealthData()
+        }
+
 
     }
 
