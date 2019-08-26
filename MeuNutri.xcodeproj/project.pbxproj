@@ -86,7 +86,23 @@
 			path = Sync;
 			sourceTree = "<group>";
 		};
-		AF20380F2309FC98006A1ACD /* Onboard */ = {
+		AF0E9E372313686000805E03 /* SyncView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SyncView;
+			sourceTree = "<group>";
+		};
+		AF0E9E382313687E00805E03 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				AF20380F2309FC98006A1ACD /* OnboardView */,
+				AF0E9E372313686000805E03 /* SyncView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		AF20380F2309FC98006A1ACD /* OnboardView */ = {
 			isa = PBXGroup;
 			children = (
 				AF67DFD32304FCDF0046BB92 /* Onboard.storyboard */,
@@ -94,7 +110,7 @@
 				AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */,
 				AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */,
 			);
-			path = Onboard;
+			path = OnboardView;
 			sourceTree = "<group>";
 		};
 		AF203818230CE48F006A1ACD /* Services */ = {
@@ -146,13 +162,13 @@
 		AF67DFCE2304FCDF0046BB92 /* MeuNutri */ = {
 			isa = PBXGroup;
 			children = (
-				AF20381B230CF521006A1ACD /* MeuNutri.entitlements */,
+				AF0E9E382313687E00805E03 /* Modules */,
 				AF203818230CE48F006A1ACD /* Services */,
-				AF20380F2309FC98006A1ACD /* Onboard */,
 				AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */,
 				AF67DFD62304FCE20046BB92 /* Assets.xcassets */,
 				AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */,
 				AF67DFDB2304FCE20046BB92 /* Info.plist */,
+				AF20381B230CF521006A1ACD /* MeuNutri.entitlements */,
 				AF67DFE1230506330046BB92 /* GoogleService-Info.plist */,
 			);
 			path = MeuNutri;
