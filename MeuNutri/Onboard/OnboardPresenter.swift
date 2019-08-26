@@ -22,15 +22,7 @@ class OnboardPresenter: OnboardPresenterProtocol {
     ]
 
     func viewDidAppear() {
-//        startLoginFlow()
-
-        HealthDataService.shared.requestPermission { (success, error) in
-            SyncDataService.shared.syncHealthData(completion: { (success) in
-                print("Uploaded? \(success)")
-            })
-        }
-
-
+        startLoginFlow()
     }
 
     private func startLoginFlow() {
