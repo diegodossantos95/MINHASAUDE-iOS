@@ -62,7 +62,7 @@ class HealthDataManager {
     private func readHeartRate(completion: @escaping ([HealthMeasure]) -> Void) {
         HealthDataService.shared.readHealthData(type: .heartRate) { (samples, error) in
             var heartRateMeasures = [HealthMeasure]()
-            let unit = "BPM"
+            let unit = "BPM" //TODO: move units to enum
 
             if let samples = samples {
                 for data in samples {

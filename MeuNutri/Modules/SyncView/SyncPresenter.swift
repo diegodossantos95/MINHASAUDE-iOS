@@ -39,6 +39,11 @@ class SyncPresenter: SyncPresenterProtocol {
     }
 
     func cancelButtonDidTouch() {
-        
+        view?.startActivityIndicator()
+        SyncDataService.shared.removeHealthData { (success) in
+            //TODO: handle error
+            print("Deletion worked? \(success)")
+            self.view?.stopActivityIndicator()
+        }
     }
 }

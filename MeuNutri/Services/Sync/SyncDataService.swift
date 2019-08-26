@@ -18,23 +18,27 @@ class SyncDataService {
 
     //MARK: Public functions
     func syncHealthData(completion: @escaping (Bool) -> Void) {
-        let uploadGroup = DispatchGroup()
+        let databaseOperationGroup = DispatchGroup()
         var success = true
 
         HealthDataManager.shared.readHealthData { (measures) in
             for (measure, data) in measures {
-                uploadGroup.enter()
-                UploadService.shared.uploadHealthData(name: measure, data: data, completion: { (error) in
+                databaseOperationGroup.enter()
+                DatabaseService.shared.saveHealthData(name: measure, data: data, completion: { (error) in
                     if let _ = error {
                         success = false
                     }
-                    uploadGroup.leave()
+                    databaseOperationGroup.leave()
                 })
             }
         }
 
-        uploadGroup.notify(queue: .main) {
+        databaseOperationGroup.notify(queue: .main) {
             completion(success)
         }
+    }
+
+    func removeHealthData(completion: @escaping (Bool) -> Void) {
+        DatabaseService.shared.deleteHealthData(completion: completion)
     }
 }
