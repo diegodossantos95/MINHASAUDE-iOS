@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZh-aQ-dRA">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sync-->
+        <scene sceneID="qEK-az-url">
+            <objects>
+                <viewController storyboardIdentifier="SyncViewController" title="Sync" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zZh-aQ-dRA" customClass="SyncViewController" customModule="MeuNutri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JK1-II-zd1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-41-jfr">
+                                <rect key="frame" x="190" y="373" width="34" height="30"/>
+                                <state key="normal" title="Sync"/>
+                                <connections>
+                                    <action selector="syncButtonDidTouch" destination="zZh-aQ-dRA" eventType="touchUpInside" id="H3A-ug-IWO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lU3-bT-mko">
+                                <rect key="frame" x="183" y="433" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonDidTouch" destination="zZh-aQ-dRA" eventType="touchUpInside" id="iGP-Td-w5q"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jsg-f4-jBa">
+                                <rect key="frame" x="197" y="493" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jsg-f4-jBa" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="B03-Zg-f6B"/>
+                            <constraint firstItem="lU3-bT-mko" firstAttribute="centerY" secondItem="JK1-II-zd1" secondAttribute="centerY" id="BKX-8q-iDL"/>
+                            <constraint firstItem="lU3-bT-mko" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="EE8-DK-BC0"/>
+                            <constraint firstItem="hgM-41-jfr" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="GyE-qZ-ST3"/>
+                            <constraint firstItem="lU3-bT-mko" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="30" id="boy-cW-wrZ"/>
+                            <constraint firstItem="jsg-f4-jBa" firstAttribute="top" secondItem="lU3-bT-mko" secondAttribute="bottom" constant="30" id="vMe-bk-rcw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MQa-qY-Fgc"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="jsg-f4-jBa" id="5jm-mi-gaR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUO-k5-R7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
