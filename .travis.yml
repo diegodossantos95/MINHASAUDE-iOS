@@ -2,3 +2,7 @@ language: swift
 xcode_workspace: MeuNutri.xcworkspace
 xcode_scheme: MeuNutri
 xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone XS
+
+stages:
+  - name: test
+    if: false
