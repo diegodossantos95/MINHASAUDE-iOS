@@ -24,10 +24,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-alimentação-saudável-100" translatesAutoresizingMaskIntoConstraints="NO" id="v9t-BK-RqI">
+                                <rect key="frame" x="182" y="377" width="50" height="50"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3Vf-aU-IEG" firstAttribute="top" secondItem="v9t-BK-RqI" secondAttribute="bottom" constant="8" id="ASU-kp-0zG"/>
                             <constraint firstItem="3Vf-aU-IEG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Eyd-87-Tm5"/>
+                            <constraint firstItem="v9t-BK-RqI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jIu-FM-LMZ"/>
                             <constraint firstItem="3Vf-aU-IEG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="n9j-ex-tD6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -38,4 +43,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-alimentação-saudável-100" width="50" height="50"/>
+    </resources>
 </document>
