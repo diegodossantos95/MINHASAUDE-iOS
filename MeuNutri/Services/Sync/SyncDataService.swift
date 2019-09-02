@@ -26,6 +26,7 @@ class SyncDataService {
                 databaseOperationGroup.enter()
                 DatabaseService.shared.saveHealthData(name: measure, data: data, completion: { (error) in
                     if let _ = error {
+                        print(error?.localizedDescription)
                         success = false
                     }
                     databaseOperationGroup.leave()

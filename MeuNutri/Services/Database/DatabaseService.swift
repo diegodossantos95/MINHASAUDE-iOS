@@ -32,6 +32,7 @@ class DatabaseService {
     func deleteHealthData(completion: @escaping (Bool) -> Void) {
         firestore.collection(healthDataCollection).getDocuments { [unowned self] (query, error) in
             guard let query = query else {
+                print(error?.localizedDescription ?? "")
                 completion(false)
                 return
             }

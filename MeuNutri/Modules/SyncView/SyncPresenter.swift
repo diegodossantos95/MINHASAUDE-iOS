@@ -22,18 +22,17 @@ class SyncPresenter: SyncPresenterProtocol {
     func viewWillAppear() {
         HealthDataService.shared.requestPermission { (success, error) in
             if let error = error {
-                //TODO: handle error
-                print(error)
+                self.view?.showAlertView(message: error.localizedDescription)
             }
         }
-
     }
 
     func syncButtonDidTouch() {
         view?.startActivityIndicator()
         SyncDataService.shared.syncHealthData { [unowned self] (success) in
-            //TODO: handle error
-            print("Sync worked? \(success)")
+            if !success {
+                self.view?.showAlertView(message: "Failed to sync health data")
+            }
             self.view?.stopActivityIndicator()
         }
     }
@@ -41,8 +40,9 @@ class SyncPresenter: SyncPresenterProtocol {
     func cancelButtonDidTouch() {
         view?.startActivityIndicator()
         SyncDataService.shared.removeHealthData { (success) in
-            //TODO: handle error
-            print("Deletion worked? \(success)")
+            if !success {
+                self.view?.showAlertView(message: "Failed to delete health data")
+            }
             self.view?.stopActivityIndicator()
         }
     }
