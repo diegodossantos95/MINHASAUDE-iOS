@@ -65,22 +65,24 @@ class HealthDataService {
     }
 
     func readHealthData(type: HKQuantityTypeIdentifier, completionHandler: @escaping ([HKQuantitySample]?, Error?) -> Void) {
-        guard let _ = healthKitDataStore,
+        guard let store = healthKitDataStore,
             let healthDataType = HKQuantityType.quantityType(forIdentifier: type) else {
                 completionHandler(nil, notAvailableError)
                 return
         }
+
+        //https://stackoverflow.com/questions/54828298/healthkit-daily-heart-rate-average
 
         let query = HKAnchoredObjectQuery(type: healthDataType, predicate: nil, anchor: nil, limit: 100) {
             (query, samplesOrNil, deletedObjectsOrNil, newAnchor, errorOrNil) in
             if let samples = samplesOrNil as? [HKQuantitySample] {
                 completionHandler(samples, nil)
             } else {
-                //TODO
+                completionHandler(nil, errorOrNil)
             }
         }
 
-        healthKitDataStore?.execute(query)
+        store.execute(query)
     }
 }
 
