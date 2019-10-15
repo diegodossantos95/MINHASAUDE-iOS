@@ -26,6 +26,10 @@
 		AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */; };
 		AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFE1230506330046BB92 /* GoogleService-Info.plist */; };
 		AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */; };
+		AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */; };
+		AFBC3A64235571E8009C6EA4 /* Sharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */; };
+		AFBC3A66235571F7009C6EA4 /* SharingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A65235571F7009C6EA4 /* SharingPresenter.swift */; };
+		AFBC3A6823557201009C6EA4 /* SharingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A6723557201009C6EA4 /* SharingBuilder.swift */; };
 		D2927984DB95659245547A0F /* Pods_MeuNutri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +57,10 @@
 		AF67DFDB2304FCE20046BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF67DFE1230506330046BB92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctionNames.swift; sourceTree = "<group>"; };
+		AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingViewController.swift; sourceTree = "<group>"; };
+		AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sharing.storyboard; sourceTree = "<group>"; };
+		AFBC3A65235571F7009C6EA4 /* SharingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingPresenter.swift; sourceTree = "<group>"; };
+		AFBC3A6723557201009C6EA4 /* SharingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingBuilder.swift; sourceTree = "<group>"; };
 		B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeuNutri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuNutri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeuNutri/Pods-MeuNutri.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +118,7 @@
 		AF0E9E382313687E00805E03 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AFBC3A5E23557191009C6EA4 /* SharingView */,
 				AF20380F2309FC98006A1ACD /* OnboardView */,
 				AF0E9E372313686000805E03 /* SyncView */,
 			);
@@ -189,6 +198,17 @@
 			path = MeuNutri;
 			sourceTree = "<group>";
 		};
+		AFBC3A5E23557191009C6EA4 /* SharingView */ = {
+			isa = PBXGroup;
+			children = (
+				AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */,
+				AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */,
+				AFBC3A65235571F7009C6EA4 /* SharingPresenter.swift */,
+				AFBC3A6723557201009C6EA4 /* SharingBuilder.swift */,
+			);
+			path = SharingView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +278,7 @@
 				AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */,
 				AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */,
 				AF0E9E3A23136AF500805E03 /* Sync.storyboard in Resources */,
+				AFBC3A64235571E8009C6EA4 /* Sharing.storyboard in Resources */,
 				AF67DFD72304FCE20046BB92 /* Assets.xcassets in Resources */,
 				AF67DFD52304FCDF0046BB92 /* Onboard.storyboard in Resources */,
 			);
@@ -326,7 +347,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF203824230E33D2006A1ACD /* BackendService.swift in Sources */,
+				AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */,
+				AFBC3A6823557201009C6EA4 /* SharingBuilder.swift in Sources */,
 				AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */,
+				AFBC3A66235571F7009C6EA4 /* SharingPresenter.swift in Sources */,
 				AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */,
 				AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */,
 				AF0E9E34230F672400805E03 /* SyncDataService.swift in Sources */,
