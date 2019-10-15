@@ -18,13 +18,14 @@
 		AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203819230CE4F6006A1ACD /* HealthDataService.swift */; };
 		AF20381D230CF521006A1ACD /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF20381C230CF521006A1ACD /* HealthKit.framework */; };
 		AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF20381F230E2F94006A1ACD /* HealthMeasure.swift */; };
-		AF203824230E33D2006A1ACD /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203823230E33D2006A1ACD /* DatabaseService.swift */; };
+		AF203824230E33D2006A1ACD /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203823230E33D2006A1ACD /* BackendService.swift */; };
 		AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */; };
 		AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */; };
 		AF67DFD52304FCDF0046BB92 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD32304FCDF0046BB92 /* Onboard.storyboard */; };
 		AF67DFD72304FCE20046BB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD62304FCE20046BB92 /* Assets.xcassets */; };
 		AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */; };
 		AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFE1230506330046BB92 /* GoogleService-Info.plist */; };
+		AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */; };
 		D2927984DB95659245547A0F /* Pods_MeuNutri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +43,7 @@
 		AF20381B230CF521006A1ACD /* MeuNutri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeuNutri.entitlements; sourceTree = "<group>"; };
 		AF20381C230CF521006A1ACD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AF20381F230E2F94006A1ACD /* HealthMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthMeasure.swift; path = "/Users/i848202/Documents/Dev/FinalProject-iOS/MeuNutri/Services/HealthData/HealthMeasure.swift"; sourceTree = "<absolute>"; };
-		AF203823230E33D2006A1ACD /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		AF203823230E33D2006A1ACD /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
 		AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuNutri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		AF67DFD92304FCE20046BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF67DFDB2304FCE20046BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF67DFE1230506330046BB92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctionNames.swift; sourceTree = "<group>"; };
 		B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeuNutri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuNutri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeuNutri/Pods-MeuNutri.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				AF0E9E32230F667200805E03 /* Sync */,
-				AF203822230E3367006A1ACD /* Database */,
+				AF203822230E3367006A1ACD /* Backend */,
 				AF20381E230E2F4C006A1ACD /* HealthData */,
 			);
 			path = Services;
@@ -145,12 +147,13 @@
 			path = HealthData;
 			sourceTree = "<group>";
 		};
-		AF203822230E3367006A1ACD /* Database */ = {
+		AF203822230E3367006A1ACD /* Backend */ = {
 			isa = PBXGroup;
 			children = (
-				AF203823230E33D2006A1ACD /* DatabaseService.swift */,
+				AF203823230E33D2006A1ACD /* BackendService.swift */,
+				AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */,
 			);
-			path = Database;
+			path = Backend;
 			sourceTree = "<group>";
 		};
 		AF67DFC32304FCDF0046BB92 = {
@@ -322,7 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF203824230E33D2006A1ACD /* DatabaseService.swift in Sources */,
+				AF203824230E33D2006A1ACD /* BackendService.swift in Sources */,
 				AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */,
 				AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */,
 				AF67DFD02304FCDF0046BB92 /* AppDelegate.swift in Sources */,
@@ -332,6 +335,7 @@
 				AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */,
 				AF0E9E4023136BD300805E03 /* SyncBuilder.swift in Sources */,
 				AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */,
+				AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */,
 				AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */,
 				AF0E9E3C23136BB900805E03 /* SyncViewController.swift in Sources */,
 			);

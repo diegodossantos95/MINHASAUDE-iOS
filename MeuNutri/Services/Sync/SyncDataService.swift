@@ -24,9 +24,8 @@ class SyncDataService {
         HealthDataManager.shared.readHealthData { (measures) in
             for (measure, data) in measures {
                 databaseOperationGroup.enter()
-                DatabaseService.shared.saveHealthData(name: measure, data: data, completion: { (error) in
+                BackendService.shared.saveHealthData(name: measure, data: data, completion: { (error) in
                     if let _ = error {
-                        print(error?.localizedDescription)
                         success = false
                     }
                     databaseOperationGroup.leave()
@@ -40,6 +39,6 @@ class SyncDataService {
     }
 
     func removeHealthData(completion: @escaping (Bool) -> Void) {
-        DatabaseService.shared.deleteHealthData(completion: completion)
+        BackendService.shared.deleteHealthData(completion: completion)
     }
 }

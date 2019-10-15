@@ -28,6 +28,8 @@ extension OnboardViewController: FUIAuthDelegate {
         if let error = error {
             assertionFailure("Error signing in: \(error.localizedDescription)")
             return
+        } else {
+            presenter?.loginDidFinish()
         }
     }
 }

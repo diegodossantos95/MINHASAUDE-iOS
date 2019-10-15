@@ -13,6 +13,7 @@ protocol OnboardPresenterProtocol {
     var view: (OnboardViewProtocol & FUIAuthDelegate & UIViewController)? { get set }
 
     func viewDidAppear()
+    func loginDidFinish()
 }
 
 class OnboardPresenter: OnboardPresenterProtocol {
@@ -23,6 +24,11 @@ class OnboardPresenter: OnboardPresenterProtocol {
 
     func viewDidAppear() {
         startLoginFlow()
+    }
+
+    func loginDidFinish() {
+        let syncView = SyncBuilder().build()
+        self.view?.present(syncView, animated: true, completion: nil)
     }
 
     private func startLoginFlow() {
