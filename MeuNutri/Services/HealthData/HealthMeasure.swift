@@ -19,7 +19,7 @@ struct HealthMeasure {
             guard label != nil else { return nil }
 
             if let dateValue = value as? Date {
-                let timestamp = dateValue.timeIntervalSince1970//Timestamp(seconds: Int64(dateValue.timeIntervalSince1970), nanoseconds: 0)
+                let timestamp = dateValue.timeIntervalSince1970
                 return (label!, timestamp)
             }
 
