@@ -34,6 +34,13 @@
                                 <rect key="frame" x="188.5" y="493" width="37" height="37"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8di-4U-0ha">
+                                <rect key="frame" x="176.5" y="313" width="61" height="30"/>
+                                <state key="normal" title="Sharings"/>
+                                <connections>
+                                    <action selector="sharingsButtonDidTouch" destination="zZh-aQ-dRA" eventType="touchUpInside" id="jER-bB-QjS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -41,6 +48,8 @@
                             <constraint firstItem="lU3-bT-mko" firstAttribute="centerY" secondItem="JK1-II-zd1" secondAttribute="centerY" id="BKX-8q-iDL"/>
                             <constraint firstItem="lU3-bT-mko" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="EE8-DK-BC0"/>
                             <constraint firstItem="hgM-41-jfr" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="GyE-qZ-ST3"/>
+                            <constraint firstItem="hgM-41-jfr" firstAttribute="top" secondItem="8di-4U-0ha" secondAttribute="bottom" constant="30" id="UM3-iu-wiS"/>
+                            <constraint firstItem="8di-4U-0ha" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="Ugl-pt-6I3"/>
                             <constraint firstItem="lU3-bT-mko" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="30" id="boy-cW-wrZ"/>
                             <constraint firstItem="jsg-f4-jBa" firstAttribute="top" secondItem="lU3-bT-mko" secondAttribute="bottom" constant="30" id="vMe-bk-rcw"/>
                         </constraints>

@@ -14,6 +14,7 @@ protocol SyncPresenterProtocol {
     func viewWillAppear()
     func syncButtonDidTouch()
     func cancelButtonDidTouch()
+    func sharingButtonDidTouch()
 }
 
 class SyncPresenter: SyncPresenterProtocol {
@@ -45,5 +46,10 @@ class SyncPresenter: SyncPresenterProtocol {
             }
             self.view?.stopActivityIndicator()
         }
+    }
+
+    func sharingButtonDidTouch() {
+        let sharingView = SharingBuilder().build()
+        self.view?.navigationController?.pushViewController(sharingView, animated: true)
     }
 }

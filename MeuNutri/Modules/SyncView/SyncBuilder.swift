@@ -10,16 +10,17 @@ import Foundation
 import UIKit
 
 class SyncBuilder {
-    func build() -> UIViewController {
+    func build() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Sync", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "SyncViewController") as! SyncViewController
         let presenter = SyncPresenter()
+        let navigation = UINavigationController(rootViewController: view)
 
         view.presenter = presenter
         presenter.view = view
 
         view.modalPresentationStyle = .fullScreen
 
-        return view
+        return navigation
     }
 }

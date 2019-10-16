@@ -33,6 +33,10 @@ class SyncViewController: UIViewController, SyncViewProtocol {
         presenter?.cancelButtonDidTouch()
     }
 
+    @IBAction func sharingsButtonDidTouch() {
+        presenter?.sharingButtonDidTouch()
+    }
+
     func startActivityIndicator() {
         activityIndicator.startAnimating()
     }

@@ -51,4 +51,20 @@ class BackendService {
 //            })
 //        }
     }
+
+    func getSharings(completion: @escaping ([String]?, Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.getSharings.rawValue).call { (result, error) in
+            if let sharings = result?.data as? [String]? {
+                completion(sharings, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+    func deleteSharing(name: String, completion: @escaping (Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.deleteSharing.rawValue).call(["sharingId": name]) { (result, error) in
+            completion(error)
+        }
+    }
 }
