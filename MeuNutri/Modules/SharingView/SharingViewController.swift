@@ -12,6 +12,10 @@ protocol SharingViewProtocol {
     var presenter: SharingPresenterProtocol? { get set }
 
     func sharingsDidLoad()
+    func sharingDidDelete()
+    func sharingDidFailDelete()
+    func sharingDidAdd()
+    func sharingDidFailAdd()
 }
 
 class SharingViewController: UIViewController, SharingViewProtocol {
@@ -24,8 +28,8 @@ class SharingViewController: UIViewController, SharingViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        sharingTableView.dataSource = self
-        sharingTableView.delegate = self
+        setupTableView()
+        setupAddButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,12 +40,59 @@ class SharingViewController: UIViewController, SharingViewProtocol {
     func sharingsDidLoad() {
         sharingTableView.reloadData()
     }
+
+    func sharingDidDelete() {
+        //TODO
+    }
+
+    func sharingDidFailDelete() {
+        //TODO
+    }
+
+    func sharingDidAdd() {
+        sharingTableView.reloadData()
+    }
+
+    func sharingDidFailAdd() {
+        //TODO
+    }
+
+    // Private funcs
+    private func setupTableView() {
+        sharingTableView.dataSource = self
+        sharingTableView.delegate = self
+    }
+
+    private func setupAddButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonDidTap))
+    }
+
+    @objc
+    private func addButtonDidTap() {
+        let alert = UIAlertController(title: "New Sharing", message: "Input the physician's email to share your health data.", preferredStyle:
+            .alert)
+
+        alert.addTextField { (textField) in
+            textField.placeholder = "Email"
+        }
+
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak self] (action) in
+            guard let text = alert.textFields?[0].text else {
+                return
+            }
+
+            self?.presenter?.addSharing(id: text)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension SharingViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (action, indexPath) in
-            self?.presenter?.sharingDidDelete(index: indexPath.row)
+            self?.presenter?.deleteSharing(index: indexPath.row)
             self?.sharingTableView.deleteRows(at: [indexPath], with: .fade)
         }
 

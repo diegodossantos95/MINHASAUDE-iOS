@@ -67,4 +67,10 @@ class BackendService {
             completion(error)
         }
     }
+
+    func addSharing(name: String, completion: @escaping (Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.addSharing.rawValue).call(["sharingId": name]) { (result, error) in
+            completion(error)
+        }
+    }
 }

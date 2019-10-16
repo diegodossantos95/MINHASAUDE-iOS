@@ -13,7 +13,8 @@ protocol SharingPresenterProtocol {
     var sharings: [String] { get }
 
     func viewWillAppear()
-    func sharingDidDelete(index: Int)
+    func deleteSharing(index: Int)
+    func addSharing(id: String)
 }
 
 class SharingPresenter: SharingPresenterProtocol {
@@ -26,17 +27,36 @@ class SharingPresenter: SharingPresenterProtocol {
                 self?.sharings = sharings
                 self?.view?.sharingsDidLoad()
             } else {
+                //TODO: handle errors
                 print(error)
             }
         }
     }
 
-    func sharingDidDelete(index: Int) {
+    func deleteSharing(index: Int) {
         let sharing = self.sharings.remove(at: index)
 
-        BackendService.shared.deleteSharing(name: sharing) { (error) in
-            //TODO: rever the change...
-            print(error)
+        BackendService.shared.deleteSharing(name: sharing) { [weak self] (error) in
+            if error != nil {
+                //TODO: revert the change...
+                print(error)
+                self?.view?.sharingDidFailDelete()
+            } else {
+                self?.view?.sharingDidDelete()
+            }
+        }
+    }
+
+    func addSharing(id: String) {
+        BackendService.shared.addSharing(name: id) { [weak self] (error) in
+            if error != nil {
+                //TODO: handle errors
+                print(error)
+                self?.view?.sharingDidFailAdd()
+            } else {
+                self?.sharings.append(id)
+                self?.view?.sharingDidAdd()
+            }
         }
     }
 }
