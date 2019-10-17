@@ -33,23 +33,10 @@ class BackendService {
         }
     }
 
-    func deleteHealthData(completion: @escaping (Bool) -> Void) {
-//        firestore.collection(healthDataCollection).getDocuments { [unowned self] (query, error) in
-//            guard let query = query else {
-//                print(error?.localizedDescription ?? "")
-//                completion(false)
-//                return
-//            }
-//
-//            let batch = self.firestore.batch()
-//            for document in query.documents {
-//                batch.deleteDocument(document.reference)
-//            }
-//
-//            batch.commit(completion: { (error) in
-//                completion(error == nil)
-//            })
-//        }
+    func deleteHealthData(completion: @escaping (Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.deleteHealthData.rawValue).call { (result, error) in
+            completion(error)
+        }
     }
 
     func getSharings(completion: @escaping ([String]?, Error?) -> Void) {

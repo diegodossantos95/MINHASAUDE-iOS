@@ -19,7 +19,7 @@ class SyncBuilder {
         view.presenter = presenter
         presenter.view = view
 
-        view.modalPresentationStyle = .fullScreen
+        navigation.modalPresentationStyle = .fullScreen
 
         return navigation
     }

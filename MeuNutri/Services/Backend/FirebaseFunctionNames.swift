@@ -10,6 +10,7 @@ import Foundation
 
 enum FirebaseFunctionNames: String {
     case updateHealthData,
+         deleteHealthData,
          getSharings,
          deleteSharing,
          addSharing

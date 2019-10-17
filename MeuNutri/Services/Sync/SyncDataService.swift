@@ -21,16 +21,19 @@ class SyncDataService {
         let databaseOperationGroup = DispatchGroup()
         var success = true
 
+        databaseOperationGroup.enter()
         HealthDataManager.shared.readHealthData { (measures) in
             for (measure, data) in measures {
                 databaseOperationGroup.enter()
                 BackendService.shared.saveHealthData(name: measure, data: data, completion: { (error) in
                     if let _ = error {
+                        print(error)
                         success = false
                     }
                     databaseOperationGroup.leave()
                 })
             }
+            databaseOperationGroup.leave()
         }
 
         databaseOperationGroup.notify(queue: .main) {
@@ -39,6 +42,13 @@ class SyncDataService {
     }
 
     func removeHealthData(completion: @escaping (Bool) -> Void) {
-        BackendService.shared.deleteHealthData(completion: completion)
+        BackendService.shared.deleteHealthData { (error) in
+            if let error = error {
+                print(error)
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
 }
