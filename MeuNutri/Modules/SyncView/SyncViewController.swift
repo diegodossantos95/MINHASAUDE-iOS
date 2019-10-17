@@ -46,10 +46,6 @@ class SyncViewController: UIViewController, SyncViewProtocol {
     }
 
     func showAlertView(message: String) {
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        self.present(alert, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-            alert.dismiss(animated: true)
-        }
+        AlertHelper.showAlert(title: "Error", message: message, rootView: self)
     }
 }

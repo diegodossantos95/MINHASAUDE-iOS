@@ -30,6 +30,7 @@
 		AFBC3A64235571E8009C6EA4 /* Sharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */; };
 		AFBC3A66235571F7009C6EA4 /* SharingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A65235571F7009C6EA4 /* SharingPresenter.swift */; };
 		AFBC3A6823557201009C6EA4 /* SharingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A6723557201009C6EA4 /* SharingBuilder.swift */; };
+		AFBC3A6B2357F919009C6EA4 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A6A2357F919009C6EA4 /* AlertHelper.swift */; };
 		D2927984DB95659245547A0F /* Pods_MeuNutri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sharing.storyboard; sourceTree = "<group>"; };
 		AFBC3A65235571F7009C6EA4 /* SharingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingPresenter.swift; sourceTree = "<group>"; };
 		AFBC3A6723557201009C6EA4 /* SharingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingBuilder.swift; sourceTree = "<group>"; };
+		AFBC3A6A2357F919009C6EA4 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		B5080DA59E7745A31F84C700 /* Pods_MeuNutri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeuNutri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7837F5CA0DA3B993CABF9AE /* Pods-MeuNutri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeuNutri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeuNutri/Pods-MeuNutri.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 		AF0E9E382313687E00805E03 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AFBC3A692357F905009C6EA4 /* Commons */,
 				AFBC3A5E23557191009C6EA4 /* SharingView */,
 				AF20380F2309FC98006A1ACD /* OnboardView */,
 				AF0E9E372313686000805E03 /* SyncView */,
@@ -207,6 +210,14 @@
 				AFBC3A6723557201009C6EA4 /* SharingBuilder.swift */,
 			);
 			path = SharingView;
+			sourceTree = "<group>";
+		};
+		AFBC3A692357F905009C6EA4 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				AFBC3A6A2357F919009C6EA4 /* AlertHelper.swift */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +369,7 @@
 				AF0E9E36230F9B7E00805E03 /* HealthDataManager.swift in Sources */,
 				AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */,
 				AF0E9E4023136BD300805E03 /* SyncBuilder.swift in Sources */,
+				AFBC3A6B2357F919009C6EA4 /* AlertHelper.swift in Sources */,
 				AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */,
 				AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */,
 				AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */,
