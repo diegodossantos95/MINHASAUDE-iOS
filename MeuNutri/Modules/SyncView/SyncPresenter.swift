@@ -26,6 +26,7 @@ class SyncPresenter: SyncPresenterProtocol {
                 self.view?.showAlertView(message: error.localizedDescription)
             }
         }
+        loadExpirationTime()
     }
 
     func syncButtonDidTouch() {
@@ -51,5 +52,17 @@ class SyncPresenter: SyncPresenterProtocol {
     func sharingButtonDidTouch() {
         let sharingView = SharingBuilder().build()
         self.view?.navigationController?.pushViewController(sharingView, animated: true)
+    }
+
+    //Private func
+    private func loadExpirationTime() {
+        BackendService.shared.getExpiration { (date, error) in
+            if let error =  error {
+                //TODO: handle
+                print(error)
+            } else if let date = date{
+                self.view?.expirationTimeDidLoad(date: date)
+            }
+        }
     }
 }

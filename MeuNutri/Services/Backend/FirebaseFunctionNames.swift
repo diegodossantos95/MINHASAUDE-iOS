@@ -13,5 +13,7 @@ enum FirebaseFunctionNames: String {
          deleteHealthData,
          getSharings,
          deleteSharing,
-         addSharing
+         addSharing,
+         getExpiration,
+         updateExpiration
 }

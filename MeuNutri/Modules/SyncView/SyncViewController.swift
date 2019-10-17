@@ -14,6 +14,7 @@ protocol SyncViewProtocol {
     func startActivityIndicator()
     func stopActivityIndicator()
     func showAlertView(message: String)
+    func expirationTimeDidLoad(date: Date)
 }
 
 class SyncViewController: UIViewController, SyncViewProtocol {
@@ -47,5 +48,10 @@ class SyncViewController: UIViewController, SyncViewProtocol {
 
     func showAlertView(message: String) {
         AlertHelper.showAlert(title: "Error", message: message, rootView: self)
+    }
+
+    func expirationTimeDidLoad(date: Date) {
+        //TODO: show expiration time
+        print(date)
     }
 }
