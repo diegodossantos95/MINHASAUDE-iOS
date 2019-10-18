@@ -36,6 +36,8 @@ class OnboardPresenter: OnboardPresenterProtocol {
         authUI.delegate = view
         authUI.providers = providers
 
+        //TODO: check if user is authenticated
+
         let authViewController = authUI.authViewController()
         view?.present(authViewController, animated: true, completion: nil)
     }

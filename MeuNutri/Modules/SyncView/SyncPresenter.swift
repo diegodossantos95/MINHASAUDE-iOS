@@ -56,12 +56,12 @@ class SyncPresenter: SyncPresenterProtocol {
 
     //Private func
     private func loadExpirationTime() {
-        BackendService.shared.getExpiration { (date, error) in
+        BackendService.shared.getExpiration { (days, error) in
             if let error =  error {
                 //TODO: handle
                 print(error)
-            } else if let date = date{
-                self.view?.expirationTimeDidLoad(date: date)
+            } else if let days = days {
+                self.view?.expirationTimeDidLoad(days: days)
             }
         }
     }

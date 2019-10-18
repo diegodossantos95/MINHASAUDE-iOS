@@ -61,11 +61,10 @@ class BackendService {
         }
     }
 
-    func getExpiration(completion: @escaping (Date?, Error?) -> Void) {
+    func getExpiration(completion: @escaping (Int?, Error?) -> Void) {
         firebaseFunctions.httpsCallable(FirebaseFunctionNames.getExpiration.rawValue).call { (result, error) in
-            if let timestamp = result?.data as? Double {
-                let date = Date(timeIntervalSince1970: timestamp)
-                completion(date, nil)
+            if let days = result?.data as? Int {
+                completion(days, nil)
             } else {
                 completion(nil, error)
             }
