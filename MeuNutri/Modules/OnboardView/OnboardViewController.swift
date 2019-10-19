@@ -8,7 +8,6 @@
 
 import UIKit
 import FirebaseUI
-import FirebaseFunctions
 
 protocol OnboardViewProtocol {
     var presenter: OnboardPresenterProtocol? { get set }

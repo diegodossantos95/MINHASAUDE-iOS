@@ -39,6 +39,12 @@ class BackendService {
             }
     }
 
+    func initDatabase(completion: @escaping (Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.initPatientDatabase.rawValue).call { (result, error) in
+            completion(error)
+        }
+    }
+
     func deleteHealthData(completion: @escaping (Error?) -> Void) {
         firebaseFunctions.httpsCallable(FirebaseFunctionNames.deleteHealthData.rawValue).call { (result, error) in
             completion(error)

@@ -18,27 +18,31 @@ protocol OnboardPresenterProtocol {
 
 class OnboardPresenter: OnboardPresenterProtocol {
     weak var view: (UIViewController & FUIAuthDelegate & OnboardViewProtocol)?
-    private let providers: [FUIAuthProvider] = [
-        FUIEmailAuth()
-    ]
 
     func viewDidAppear() {
-        startLoginFlow()
+        if AuthManager.shared.isAuthenticated() {
+            loginDidFinish()
+        } else {
+            startLoginFlow()
+        }
     }
 
     func loginDidFinish() {
-        let syncView = SyncBuilder().build()
-        self.view?.present(syncView, animated: true, completion: nil)
+        BackendService.shared.initDatabase { (error) in
+            if let error = error {
+                print(error)
+            }
+
+            let syncView = SyncBuilder().build()
+            self.view?.present(syncView, animated: true, completion: nil)
+        }
     }
 
     private func startLoginFlow() {
-        guard let authUI = FUIAuth.defaultAuthUI() else { return }
-        authUI.delegate = view
-        authUI.providers = providers
+        guard let view = view else {
+            return
+        }
 
-        //TODO: check if user is authenticated
-
-        let authViewController = authUI.authViewController()
-        view?.present(authViewController, animated: true, completion: nil)
+        AuthManager.shared.doLogin(from: view)
     }
 }

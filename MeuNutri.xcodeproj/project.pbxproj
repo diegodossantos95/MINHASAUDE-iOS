@@ -26,6 +26,7 @@
 		AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */; };
 		AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFE1230506330046BB92 /* GoogleService-Info.plist */; };
 		AF8F981E235AA63D00B1E54B /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F981D235AA63D00B1E54B /* Formatter.swift */; };
+		AF8F9820235AC0F200B1E54B /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F981F235AC0F200B1E54B /* AuthManager.swift */; };
 		AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */; };
 		AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */; };
 		AFBC3A64235571E8009C6EA4 /* Sharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */; };
@@ -59,6 +60,7 @@
 		AF67DFDB2304FCE20046BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF67DFE1230506330046BB92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AF8F981D235AA63D00B1E54B /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		AF8F981F235AC0F200B1E54B /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctionNames.swift; sourceTree = "<group>"; };
 		AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingViewController.swift; sourceTree = "<group>"; };
 		AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sharing.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		AF203818230CE48F006A1ACD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AF8F9821235AC0FC00B1E54B /* Authentication */,
 				AF0E9E32230F667200805E03 /* Sync */,
 				AF203822230E3367006A1ACD /* Backend */,
 				AF20381E230E2F4C006A1ACD /* HealthData */,
@@ -201,6 +204,14 @@
 				AF67DFE1230506330046BB92 /* GoogleService-Info.plist */,
 			);
 			path = MeuNutri;
+			sourceTree = "<group>";
+		};
+		AF8F9821235AC0FC00B1E54B /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				AF8F981F235AC0F200B1E54B /* AuthManager.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		AFBC3A5E23557191009C6EA4 /* SharingView */ = {
@@ -374,6 +385,7 @@
 				AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */,
 				AF0E9E4023136BD300805E03 /* SyncBuilder.swift in Sources */,
 				AFBC3A6B2357F919009C6EA4 /* AlertHelper.swift in Sources */,
+				AF8F9820235AC0F200B1E54B /* AuthManager.swift in Sources */,
 				AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */,
 				AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */,
 				AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */,
