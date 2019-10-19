@@ -71,9 +71,8 @@ class BackendService {
         }
     }
 
-    func updateExpiration(date: Date, completion: @escaping (Error?) -> Void) {
-        let timestamp = date.timeIntervalSince1970
-        firebaseFunctions.httpsCallable(FirebaseFunctionNames.updateExpiration.rawValue).call(["expiration": timestamp]) { (result, error) in
+    func updateExpiration(value: Int, completion: @escaping (Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.updateExpiration.rawValue).call(["expiration": value]) { (result, error) in
             completion(error)
         }
     }

@@ -78,8 +78,8 @@ class SyncViewController: UIViewController, SyncViewProtocol {
         expirationDropDown.optionArray = self.expirationValues
         expirationDropDown.optionIds = self.expirationIds
 
-        expirationDropDown.didSelect { (text, index, id) in
-            //TODO: call presenter and update in db
+        expirationDropDown.didSelect { [weak self] (text, index, id) in
+            self?.presenter?.expirationDropdownDidUpdate(value: id)
         }
     }
 }

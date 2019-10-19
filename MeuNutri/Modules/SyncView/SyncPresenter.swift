@@ -16,6 +16,7 @@ protocol SyncPresenterProtocol {
     func syncButtonDidTouch()
     func cancelButtonDidTouch()
     func sharingButtonDidTouch()
+    func expirationDropdownDidUpdate(value: Int)
 }
 
 class SyncPresenter: SyncPresenterProtocol {
@@ -61,10 +62,19 @@ class SyncPresenter: SyncPresenterProtocol {
         self.view?.navigationController?.pushViewController(sharingView, animated: true)
     }
 
+    func expirationDropdownDidUpdate(value: Int) {
+        BackendService.shared.updateExpiration(value: value) { (error) in
+            if let error = error {
+                //TODO: handle
+                print(error)
+            }
+        }
+    }
+
     //Private func
     private func loadExpirationTime() {
         BackendService.shared.getExpiration { (days, error) in
-            if let error =  error {
+            if let error = error {
                 //TODO: handle
                 print(error)
             } else if let days = days {
