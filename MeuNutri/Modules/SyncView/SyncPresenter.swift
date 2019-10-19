@@ -10,6 +10,7 @@ import UIKit
 
 protocol SyncPresenterProtocol {
     var view: (SyncViewProtocol & UIViewController)? { get set }
+    var expirationOptions: [Int: String] { get set }
 
     func viewWillAppear()
     func syncButtonDidTouch()
@@ -19,6 +20,12 @@ protocol SyncPresenterProtocol {
 
 class SyncPresenter: SyncPresenterProtocol {
     weak var view: (UIViewController & SyncViewProtocol)?
+    var expirationOptions: [Int : String] = [
+        1: "1 Day",
+        7: "7 Days",
+        15: "15 Days",
+        30: "30 Days"
+    ]
 
     func viewWillAppear() {
         HealthDataService.shared.requestPermission { (success, error) in

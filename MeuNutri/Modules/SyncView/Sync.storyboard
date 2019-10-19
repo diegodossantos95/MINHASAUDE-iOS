@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="40" id="SG0-MT-KUd"/>
                                     <constraint firstAttribute="width" constant="80" id="afV-Bf-FFQ"/>
                                 </constraints>
-                                <state key="normal" title="Cancel">
+                                <state key="normal" title="Delete">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>

@@ -20,6 +20,20 @@ protocol SyncViewProtocol {
 
 class SyncViewController: UIViewController, SyncViewProtocol {
     var presenter: SyncPresenterProtocol?
+    private var expirationValues: [String] {
+        guard let values = presenter?.expirationOptions.values else {
+            return []
+        }
+        let sorted = Array(values.sorted {$0.localizedStandardCompare($1) == .orderedAscending})
+        return sorted
+    }
+    private var expirationIds: [Int] {
+        guard let ids = presenter?.expirationOptions.keys else {
+            return []
+        }
+        let sorted = Array(ids.sorted())
+        return sorted
+    }
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var lastSyncDateLabel: UILabel!
@@ -28,13 +42,7 @@ class SyncViewController: UIViewController, SyncViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
-
-        expirationDropDown.optionArray = ["1 Day", "7 Days", "15 Days", "30 Days"]
-        expirationDropDown.optionIds = [1,7,15,30]
-        expirationDropDown.didSelect { (text, index, id) in
-            //TODO: call presenter and update in db
-            print("\(text) - \(index) - \(id)")
-        }
+        setupExpirationDropdown()
     }
 
     @IBAction func syncButtonDidTouch() {
@@ -62,12 +70,16 @@ class SyncViewController: UIViewController, SyncViewProtocol {
     }
 
     func expirationTimeDidLoad(days: Int) {
-        //TODO: show expiration time
-        print(days)
+        expirationDropDown.selectedIndex = expirationIds.firstIndex(of: days) ?? 0
+        expirationDropDown.text = presenter?.expirationOptions[days]
+    }
 
-        expirationDropDown.selectedIndex = 0
-        expirationDropDown.text = "\(days) Day"
+    private func setupExpirationDropdown() {
+        expirationDropDown.optionArray = self.expirationValues
+        expirationDropDown.optionIds = self.expirationIds
 
-
+        expirationDropDown.didSelect { (text, index, id) in
+            //TODO: call presenter and update in db
+        }
     }
 }
