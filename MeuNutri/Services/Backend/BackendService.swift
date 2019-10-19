@@ -24,13 +24,19 @@ class BackendService {
     }
 
     //MARK: Public functions
-    func saveHealthData(name: String, data: [HealthMeasure], completion: @escaping (Error?) -> Void) {
+    func saveHealthData(name: String, data: [HealthMeasure], completion: @escaping (Date?, Error?) -> Void) {
         let mappedMeasures = data.map { $0.asDictionary }
         let mappedData = [name: mappedMeasures]
 
-        firebaseFunctions.httpsCallable(FirebaseFunctionNames.updateHealthData.rawValue).call([healthDataCollection: mappedData]) { (result, error) in
-            completion(error)
-        }
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.updateHealthData.rawValue)
+            .call([healthDataCollection: mappedData]) { (result, error) in
+                if let timestamp = result?.data as? Double {
+                    let date = Date(timeIntervalSince1970: timestamp)
+                    completion(date, nil)
+                } else {
+                    completion(nil, error)
+                }
+            }
     }
 
     func deleteHealthData(completion: @escaping (Error?) -> Void) {
@@ -61,12 +67,19 @@ class BackendService {
         }
     }
 
-    func getExpiration(completion: @escaping (Int?, Error?) -> Void) {
-        firebaseFunctions.httpsCallable(FirebaseFunctionNames.getExpiration.rawValue).call { (result, error) in
-            if let days = result?.data as? Int {
-                completion(days, nil)
+    func getExpirationAndSyncTimes(completion: @escaping (Int?, Date?, Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.getExpirationAndSyncTimes.rawValue).call { (result, error) in
+            if let data = result?.data as? [String: Any] {
+                let expiration = data["expiration"] as? Int
+                var syncDate: Date?
+
+                if let sync = data["sync"] as? Double {
+                    syncDate = Date(timeIntervalSince1970: sync)
+                }
+
+                completion(expiration, syncDate, nil)
             } else {
-                completion(nil, error)
+                completion(nil, nil, error)
             }
         }
     }

@@ -16,10 +16,12 @@ protocol SyncViewProtocol {
     func stopActivityIndicator()
     func showAlertView(message: String)
     func expirationTimeDidLoad(days: Int)
+    func updateSyncLabel(text: String)
 }
 
 class SyncViewController: UIViewController, SyncViewProtocol {
     var presenter: SyncPresenterProtocol?
+
     private var expirationValues: [String] {
         guard let values = presenter?.expirationOptions.values else {
             return []
@@ -72,6 +74,10 @@ class SyncViewController: UIViewController, SyncViewProtocol {
     func expirationTimeDidLoad(days: Int) {
         expirationDropDown.selectedIndex = expirationIds.firstIndex(of: days) ?? 0
         expirationDropDown.text = presenter?.expirationOptions[days]
+    }
+
+    func updateSyncLabel(text: String) {
+        lastSyncDateLabel.text = text
     }
 
     private func setupExpirationDropdown() {

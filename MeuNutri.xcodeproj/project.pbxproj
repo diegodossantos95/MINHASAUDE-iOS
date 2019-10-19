@@ -25,6 +25,7 @@
 		AF67DFD72304FCE20046BB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD62304FCE20046BB92 /* Assets.xcassets */; };
 		AF67DFDA2304FCE20046BB92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFD82304FCE20046BB92 /* LaunchScreen.storyboard */; };
 		AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF67DFE1230506330046BB92 /* GoogleService-Info.plist */; };
+		AF8F981E235AA63D00B1E54B /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8F981D235AA63D00B1E54B /* Formatter.swift */; };
 		AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */; };
 		AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */; };
 		AFBC3A64235571E8009C6EA4 /* Sharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */; };
@@ -57,6 +58,7 @@
 		AF67DFD92304FCE20046BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF67DFDB2304FCE20046BB92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF67DFE1230506330046BB92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF8F981D235AA63D00B1E54B /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFunctionNames.swift; sourceTree = "<group>"; };
 		AFBC3A61235571DA009C6EA4 /* SharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingViewController.swift; sourceTree = "<group>"; };
 		AFBC3A63235571E8009C6EA4 /* Sharing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sharing.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				AFBC3A6A2357F919009C6EA4 /* AlertHelper.swift */,
+				AF8F981D235AA63D00B1E54B /* Formatter.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8F981E235AA63D00B1E54B /* Formatter.swift in Sources */,
 				AF203824230E33D2006A1ACD /* BackendService.swift in Sources */,
 				AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */,
 				AFBC3A6823557201009C6EA4 /* SharingBuilder.swift in Sources */,

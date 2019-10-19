@@ -17,19 +17,22 @@ class SyncDataService {
     }
 
     //MARK: Public functions
-    func syncHealthData(completion: @escaping (Bool) -> Void) {
+    func syncHealthData(completion: @escaping (Date?, Bool) -> Void) {
         let databaseOperationGroup = DispatchGroup()
         var success = true
+        var syncDate: Date?
 
         databaseOperationGroup.enter()
         HealthDataManager.shared.readHealthData { (measures) in
             for (measure, data) in measures {
                 databaseOperationGroup.enter()
-                BackendService.shared.saveHealthData(name: measure, data: data, completion: { (error) in
-                    if let _ = error {
+                BackendService.shared.saveHealthData(name: measure, data: data, completion: { (date, error)  in
+                    if let error = error {
                         print(error)
                         success = false
                     }
+
+                    syncDate = date
                     databaseOperationGroup.leave()
                 })
             }
@@ -37,7 +40,7 @@ class SyncDataService {
         }
 
         databaseOperationGroup.notify(queue: .main) {
-            completion(success)
+            completion(syncDate, success)
         }
     }
 

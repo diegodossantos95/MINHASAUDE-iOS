@@ -14,6 +14,6 @@ enum FirebaseFunctionNames: String {
          getSharings,
          deleteSharing,
          addSharing,
-         getExpiration,
+         getExpirationAndSyncTimes,
          updateExpiration
 }
