@@ -16,6 +16,7 @@ protocol SyncPresenterProtocol {
     func syncButtonDidTouch()
     func cancelButtonDidTouch()
     func sharingButtonDidTouch()
+    func signoutButtonDidTouch()
     func expirationDropdownDidUpdate(value: Int)
 }
 
@@ -72,6 +73,10 @@ class SyncPresenter: SyncPresenterProtocol {
                 print(error)
             }
         }
+    }
+
+    func signoutButtonDidTouch() {
+        AuthManager.shared.doSignout()
     }
 
     //Private func

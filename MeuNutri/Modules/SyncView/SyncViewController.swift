@@ -47,6 +47,14 @@ class SyncViewController: UIViewController, SyncViewProtocol {
         setupExpirationDropdown()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let signoutButton = UIBarButtonItem(title: "Signout", style: .plain, target: self, action: #selector(signoutButtonDidTouch))
+        signoutButton.tintColor = .systemRed
+        navigationItem.rightBarButtonItems = [signoutButton]
+    }
+
     @IBAction func syncButtonDidTouch() {
         presenter?.syncButtonDidTouch()
     }
@@ -57,6 +65,10 @@ class SyncViewController: UIViewController, SyncViewProtocol {
 
     @IBAction func sharingsButtonDidTouch() {
         presenter?.sharingButtonDidTouch()
+    }
+
+    @objc func signoutButtonDidTouch() {
+        presenter?.signoutButtonDidTouch()
     }
 
     func startActivityIndicator() {
