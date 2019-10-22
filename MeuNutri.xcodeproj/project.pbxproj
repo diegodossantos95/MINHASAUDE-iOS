@@ -51,7 +51,7 @@
 		AF20381C230CF521006A1ACD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		AF20381F230E2F94006A1ACD /* HealthMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthMeasure.swift; path = "/Users/i848202/Documents/Dev/FinalProject-iOS/MeuNutri/Services/HealthData/HealthMeasure.swift"; sourceTree = "<absolute>"; };
 		AF203823230E33D2006A1ACD /* BackendService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendService.swift; sourceTree = "<group>"; };
-		AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuNutri.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF67DFCC2304FCDF0046BB92 /* MyHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF67DFCF2304FCDF0046BB92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF67DFD12304FCDF0046BB92 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
 		AF67DFD42304FCDF0046BB92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Onboard.storyboard; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		AF67DFCD2304FCDF0046BB92 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */,
+				AF67DFCC2304FCDF0046BB92 /* MyHealth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			);
 			name = MeuNutri;
 			productName = MeuNutri;
-			productReference = AF67DFCC2304FCDF0046BB92 /* MeuNutri.app */;
+			productReference = AF67DFCC2304FCDF0046BB92 /* MyHealth.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -544,8 +544,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.MeuNutri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.MyHealth;
+				PRODUCT_NAME = MyHealth;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -564,8 +564,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.MeuNutri;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.diegodossantos.MyHealth;
+				PRODUCT_NAME = MyHealth;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZh-aQ-dRA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZh-aQ-dRA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgM-41-jfr">
-                                <rect key="frame" x="147" y="378" width="120" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="147" y="210" width="120" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="BCY-G8-6ZS"/>
                                     <constraint firstAttribute="width" constant="120" id="NdX-az-SDA"/>
@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="width" constant="80" id="afV-Bf-FFQ"/>
                                 </constraints>
                                 <state key="normal" title="Delete">
-                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="cancelButtonDidTouch" destination="zZh-aQ-dRA" eventType="touchUpInside" id="iGP-Td-w5q"/>
@@ -56,7 +56,7 @@
                                     <constraint firstAttribute="width" constant="100" id="cpa-Bl-hws"/>
                                 </constraints>
                                 <state key="normal" title="Physicians">
-                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -68,38 +68,38 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sync Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0PQ-E2-Ajr">
-                                <rect key="frame" x="165.5" y="277" width="83" height="21"/>
+                                <rect key="frame" x="165.5" y="89" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last synchronization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbS-mg-sgu">
-                                <rect key="frame" x="128" y="248" width="158" height="21"/>
+                                <rect key="frame" x="128" y="60" width="158" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vke-DI-eaZ">
-                                <rect key="frame" x="169" y="518" width="76" height="21"/>
+                                <rect key="frame" x="169" y="370" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="jsg-f4-jBa">
-                                <rect key="frame" x="188.5" y="64" width="37" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jsg-f4-jBa">
+                                <rect key="frame" x="197" y="278" width="20" height="20"/>
                                 <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Expiration Time" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V5A-Lb-rXI" customClass="DropDown" customModule="iOSDropDown">
-                                <rect key="frame" x="137" y="547" width="140" height="21"/>
+                                <rect key="frame" x="137" y="399" width="140" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="6SY-Si-7V7"/>
                                 </constraints>
-                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
-                                        <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
                                         <color key="value" white="0.90106842183698621" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -110,17 +110,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EbS-mg-sgu" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="5V5-je-lk8"/>
-                            <constraint firstItem="hgM-41-jfr" firstAttribute="centerY" secondItem="JK1-II-zd1" secondAttribute="centerY" constant="-40" id="9cq-wk-s79"/>
                             <constraint firstItem="jsg-f4-jBa" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="B03-Zg-f6B"/>
                             <constraint firstItem="Vke-DI-eaZ" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="DeH-MN-9ds"/>
                             <constraint firstItem="lU3-bT-mko" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="EE8-DK-BC0"/>
                             <constraint firstItem="MQa-qY-Fgc" firstAttribute="bottom" secondItem="lU3-bT-mko" secondAttribute="bottom" constant="20" id="Efs-oi-ZoN"/>
                             <constraint firstItem="hgM-41-jfr" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="GyE-qZ-ST3"/>
-                            <constraint firstItem="jsg-f4-jBa" firstAttribute="top" secondItem="MQa-qY-Fgc" secondAttribute="top" constant="20" id="M6f-yq-Vyx"/>
-                            <constraint firstItem="hgM-41-jfr" firstAttribute="top" secondItem="0PQ-E2-Ajr" secondAttribute="bottom" constant="80" id="Mzv-Xp-lYX"/>
+                            <constraint firstItem="hgM-41-jfr" firstAttribute="top" secondItem="0PQ-E2-Ajr" secondAttribute="bottom" constant="100" id="Mzv-Xp-lYX"/>
                             <constraint firstItem="8di-4U-0ha" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="Ugl-pt-6I3"/>
                             <constraint firstItem="V5A-Lb-rXI" firstAttribute="top" secondItem="Vke-DI-eaZ" secondAttribute="bottom" constant="8" id="ZGI-yh-NVD"/>
-                            <constraint firstItem="Vke-DI-eaZ" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="80" id="is2-ge-GVf"/>
+                            <constraint firstItem="EbS-mg-sgu" firstAttribute="top" secondItem="MQa-qY-Fgc" secondAttribute="top" constant="16" id="cBw-io-vyQ"/>
+                            <constraint firstItem="jsg-f4-jBa" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="8" id="dng-Dr-hmM"/>
+                            <constraint firstItem="Vke-DI-eaZ" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="100" id="is2-ge-GVf"/>
                             <constraint firstItem="V5A-Lb-rXI" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="ktB-XR-Lu3"/>
                             <constraint firstItem="0PQ-E2-Ajr" firstAttribute="top" secondItem="EbS-mg-sgu" secondAttribute="bottom" constant="8" id="mP1-bj-G6V"/>
                             <constraint firstItem="0PQ-E2-Ajr" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="nnc-Cj-4DS"/>
