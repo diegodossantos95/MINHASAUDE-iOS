@@ -18,7 +18,7 @@ protocol SharingPresenterProtocol {
 }
 
 class SharingPresenter: SharingPresenterProtocol {
-    var view: (UIViewController & SharingViewProtocol)?
+    weak var view: (UIViewController & SharingViewProtocol)?
     var sharings: [String] = []
 
     func viewWillAppear() {

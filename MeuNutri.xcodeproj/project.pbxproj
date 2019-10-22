@@ -13,6 +13,11 @@
 		AF0E9E3C23136BB900805E03 /* SyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E9E3B23136BB900805E03 /* SyncViewController.swift */; };
 		AF0E9E3E23136BC400805E03 /* SyncPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E9E3D23136BC400805E03 /* SyncPresenter.swift */; };
 		AF0E9E4023136BD300805E03 /* SyncBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E9E3F23136BD300805E03 /* SyncBuilder.swift */; };
+		AF122589235EA5B500ECECB2 /* ChangeLogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF122587235EA5B500ECECB2 /* ChangeLogsViewController.swift */; };
+		AF12258C235EA61900ECECB2 /* ChangeLogs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF12258B235EA61900ECECB2 /* ChangeLogs.storyboard */; };
+		AF12258E235EA7CF00ECECB2 /* ChangeLogsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF12258D235EA7CF00ECECB2 /* ChangeLogsBuilder.swift */; };
+		AF122590235EA7DB00ECECB2 /* ChangeLogsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF12258F235EA7DB00ECECB2 /* ChangeLogsPresenter.swift */; };
+		AF122593235EAD7D00ECECB2 /* ChangeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF122592235EAD7D00ECECB2 /* ChangeLog.swift */; };
 		AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */; };
 		AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */; };
 		AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203819230CE4F6006A1ACD /* HealthDataService.swift */; };
@@ -44,6 +49,11 @@
 		AF0E9E3B23136BB900805E03 /* SyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncViewController.swift; sourceTree = "<group>"; };
 		AF0E9E3D23136BC400805E03 /* SyncPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncPresenter.swift; sourceTree = "<group>"; };
 		AF0E9E3F23136BD300805E03 /* SyncBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncBuilder.swift; sourceTree = "<group>"; };
+		AF122587235EA5B500ECECB2 /* ChangeLogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogsViewController.swift; sourceTree = "<group>"; };
+		AF12258B235EA61900ECECB2 /* ChangeLogs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangeLogs.storyboard; sourceTree = "<group>"; };
+		AF12258D235EA7CF00ECECB2 /* ChangeLogsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogsBuilder.swift; sourceTree = "<group>"; };
+		AF12258F235EA7DB00ECECB2 /* ChangeLogsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogsPresenter.swift; sourceTree = "<group>"; };
+		AF122592235EAD7D00ECECB2 /* ChangeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLog.swift; sourceTree = "<group>"; };
 		AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPresenter.swift; sourceTree = "<group>"; };
 		AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardBuilder.swift; sourceTree = "<group>"; };
 		AF203819230CE4F6006A1ACD /* HealthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
@@ -124,12 +134,32 @@
 		AF0E9E382313687E00805E03 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				AF122586235EA58A00ECECB2 /* ChangeLogs */,
 				AFBC3A692357F905009C6EA4 /* Commons */,
 				AFBC3A5E23557191009C6EA4 /* SharingView */,
 				AF20380F2309FC98006A1ACD /* OnboardView */,
 				AF0E9E372313686000805E03 /* SyncView */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		AF122586235EA58A00ECECB2 /* ChangeLogs */ = {
+			isa = PBXGroup;
+			children = (
+				AF12258B235EA61900ECECB2 /* ChangeLogs.storyboard */,
+				AF122587235EA5B500ECECB2 /* ChangeLogsViewController.swift */,
+				AF12258D235EA7CF00ECECB2 /* ChangeLogsBuilder.swift */,
+				AF12258F235EA7DB00ECECB2 /* ChangeLogsPresenter.swift */,
+			);
+			path = ChangeLogs;
+			sourceTree = "<group>";
+		};
+		AF122591235EAD6C00ECECB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AF122592235EAD7D00ECECB2 /* ChangeLog.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		AF20380F2309FC98006A1ACD /* OnboardView */ = {
@@ -167,6 +197,7 @@
 		AF203822230E3367006A1ACD /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				AF122591235EAD6C00ECECB2 /* Models */,
 				AF203823230E33D2006A1ACD /* BackendService.swift */,
 				AFBC3A5C23554C09009C6EA4 /* FirebaseFunctionNames.swift */,
 			);
@@ -304,6 +335,7 @@
 				AF67DFE2230506330046BB92 /* GoogleService-Info.plist in Resources */,
 				AF0E9E3A23136AF500805E03 /* Sync.storyboard in Resources */,
 				AFBC3A64235571E8009C6EA4 /* Sharing.storyboard in Resources */,
+				AF12258C235EA61900ECECB2 /* ChangeLogs.storyboard in Resources */,
 				AF67DFD72304FCE20046BB92 /* Assets.xcassets in Resources */,
 				AF67DFD52304FCDF0046BB92 /* Onboard.storyboard in Resources */,
 			);
@@ -374,6 +406,7 @@
 				AF8F981E235AA63D00B1E54B /* Formatter.swift in Sources */,
 				AF203824230E33D2006A1ACD /* BackendService.swift in Sources */,
 				AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */,
+				AF122590235EA7DB00ECECB2 /* ChangeLogsPresenter.swift in Sources */,
 				AFBC3A6823557201009C6EA4 /* SharingBuilder.swift in Sources */,
 				AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */,
 				AFBC3A66235571F7009C6EA4 /* SharingPresenter.swift in Sources */,
@@ -387,9 +420,12 @@
 				AFBC3A6B2357F919009C6EA4 /* AlertHelper.swift in Sources */,
 				AF8F9820235AC0F200B1E54B /* AuthManager.swift in Sources */,
 				AF203820230E2F94006A1ACD /* HealthMeasure.swift in Sources */,
+				AF122593235EAD7D00ECECB2 /* ChangeLog.swift in Sources */,
+				AF12258E235EA7CF00ECECB2 /* ChangeLogsBuilder.swift in Sources */,
 				AFBC3A5D23554C09009C6EA4 /* FirebaseFunctionNames.swift in Sources */,
 				AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */,
 				AF0E9E3C23136BB900805E03 /* SyncViewController.swift in Sources */,
+				AF122589235EA5B500ECECB2 /* ChangeLogsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

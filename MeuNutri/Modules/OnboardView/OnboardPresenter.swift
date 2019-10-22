@@ -28,13 +28,13 @@ class OnboardPresenter: OnboardPresenterProtocol {
     }
 
     func loginDidFinish() {
-        BackendService.shared.initDatabase { (error) in
+        BackendService.shared.initDatabase { [weak self] (error) in
             if let error = error {
                 print(error)
             }
 
             let syncView = SyncBuilder().build()
-            self.view?.present(syncView, animated: true, completion: nil)
+            self?.view?.present(syncView, animated: true, completion: nil)
         }
     }
 

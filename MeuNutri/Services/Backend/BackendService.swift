@@ -95,4 +95,24 @@ class BackendService {
             completion(error)
         }
     }
+
+    func getChangeLogs(completion: @escaping ([ChangeLog]?, Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.getChangeLogs.rawValue).call { (result, error) in
+            if let data = result?.data as? [[String: Any]] {
+                let changeLogs = data.compactMap { (log) -> ChangeLog? in
+                    if let message = log["message"] as? String,
+                        let author = log["author"] as? String,
+                        let timestamp = log["date"] as? Double {
+                        return ChangeLog(message: message, author: author, date: Date(timeIntervalSince1970: timestamp))
+                    } else {
+                        return nil
+                    }
+                }
+
+                completion(changeLogs, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
 }

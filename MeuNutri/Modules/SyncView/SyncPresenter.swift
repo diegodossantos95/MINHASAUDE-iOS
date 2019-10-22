@@ -18,6 +18,7 @@ protocol SyncPresenterProtocol {
     func sharingButtonDidTouch()
     func signoutButtonDidTouch()
     func expirationDropdownDidUpdate(value: Int)
+    func changeLogsButtonDidTouch()
 }
 
 class SyncPresenter: SyncPresenterProtocol {
@@ -30,9 +31,9 @@ class SyncPresenter: SyncPresenterProtocol {
     ]
 
     func viewWillAppear() {
-        HealthDataService.shared.requestPermission { (success, error) in
+        HealthDataService.shared.requestPermission { [weak self] (success, error) in
             if let error = error {
-                self.view?.showAlertView(message: error.localizedDescription)
+                self?.view?.showAlertView(message: error.localizedDescription)
             }
         }
         loadExpirationTime()
@@ -40,24 +41,24 @@ class SyncPresenter: SyncPresenterProtocol {
 
     func syncButtonDidTouch() {
         view?.startActivityIndicator()
-        SyncDataService.shared.syncHealthData { [unowned self] (date, success) in
+        SyncDataService.shared.syncHealthData { [weak self] (date, success) in
             if !success {
-                self.view?.showAlertView(message: "Failed to sync health data")
+                self?.view?.showAlertView(message: "Failed to sync health data")
             } else if let date = date {
-                self.view?.updateSyncLabel(text: Formatter.dateToString(date: date))
+                self?.view?.updateSyncLabel(text: Formatter.dateToString(date: date))
             }
 
-            self.view?.stopActivityIndicator()
+            self?.view?.stopActivityIndicator()
         }
     }
 
     func cancelButtonDidTouch() {
         view?.startActivityIndicator()
-        SyncDataService.shared.removeHealthData { (success) in
+        SyncDataService.shared.removeHealthData { [weak self] (success) in
             if !success {
-                self.view?.showAlertView(message: "Failed to delete health data")
+                self?.view?.showAlertView(message: "Failed to delete health data")
             }
-            self.view?.stopActivityIndicator()
+            self?.view?.stopActivityIndicator()
         }
     }
 
@@ -79,9 +80,14 @@ class SyncPresenter: SyncPresenterProtocol {
         AuthManager.shared.doSignout()
     }
 
+    func changeLogsButtonDidTouch() {
+        let changeLogsView = ChangeLogsBuilder().build()
+        self.view?.navigationController?.pushViewController(changeLogsView, animated: true)
+    }
+
     //Private func
     private func loadExpirationTime() {
-        BackendService.shared.getExpirationAndSyncTimes{ (expiration, sync, error) in
+        BackendService.shared.getExpirationAndSyncTimes{ [weak self] (expiration, sync, error) in
             if let error = error {
                 //TODO: handle
                 print(error)
@@ -89,11 +95,11 @@ class SyncPresenter: SyncPresenterProtocol {
             }
 
             if let expiration = expiration {
-                self.view?.expirationTimeDidLoad(days: expiration)
+                self?.view?.expirationTimeDidLoad(days: expiration)
             }
 
             if let sync = sync {
-                self.view?.updateSyncLabel(text: Formatter.dateToString(date: sync))
+                self?.view?.updateSyncLabel(text: Formatter.dateToString(date: sync))
             }
         }
     }

@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8di-4U-0ha">
-                                <rect key="frame" x="157" y="722" width="100" height="40"/>
+                                <rect key="frame" x="157" y="642" width="100" height="40"/>
                                 <color key="backgroundColor" white="0.96884096746575343" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="akf-Gs-t0g"/>
@@ -106,6 +106,25 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-f6-ExK">
+                                <rect key="frame" x="157" y="722" width="100" height="40"/>
+                                <color key="backgroundColor" white="0.96884096750000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QfY-MP-VNI"/>
+                                    <constraint firstAttribute="width" constant="100" id="SFk-Kc-Sff"/>
+                                </constraints>
+                                <state key="normal" title="Access logs">
+                                    <color key="titleColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="changeLogsButtonDidTouch" destination="zZh-aQ-dRA" eventType="touchUpInside" id="54A-Dl-cfv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -115,16 +134,18 @@
                             <constraint firstItem="lU3-bT-mko" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="EE8-DK-BC0"/>
                             <constraint firstItem="MQa-qY-Fgc" firstAttribute="bottom" secondItem="lU3-bT-mko" secondAttribute="bottom" constant="20" id="Efs-oi-ZoN"/>
                             <constraint firstItem="hgM-41-jfr" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="GyE-qZ-ST3"/>
+                            <constraint firstItem="b3a-f6-ExK" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="H06-29-6gf"/>
                             <constraint firstItem="hgM-41-jfr" firstAttribute="top" secondItem="0PQ-E2-Ajr" secondAttribute="bottom" constant="100" id="Mzv-Xp-lYX"/>
                             <constraint firstItem="8di-4U-0ha" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="Ugl-pt-6I3"/>
                             <constraint firstItem="V5A-Lb-rXI" firstAttribute="top" secondItem="Vke-DI-eaZ" secondAttribute="bottom" constant="8" id="ZGI-yh-NVD"/>
                             <constraint firstItem="EbS-mg-sgu" firstAttribute="top" secondItem="MQa-qY-Fgc" secondAttribute="top" constant="16" id="cBw-io-vyQ"/>
                             <constraint firstItem="jsg-f4-jBa" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="8" id="dng-Dr-hmM"/>
                             <constraint firstItem="Vke-DI-eaZ" firstAttribute="top" secondItem="hgM-41-jfr" secondAttribute="bottom" constant="100" id="is2-ge-GVf"/>
+                            <constraint firstItem="lU3-bT-mko" firstAttribute="top" secondItem="b3a-f6-ExK" secondAttribute="bottom" constant="40" id="k68-ga-GzM"/>
                             <constraint firstItem="V5A-Lb-rXI" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="ktB-XR-Lu3"/>
                             <constraint firstItem="0PQ-E2-Ajr" firstAttribute="top" secondItem="EbS-mg-sgu" secondAttribute="bottom" constant="8" id="mP1-bj-G6V"/>
                             <constraint firstItem="0PQ-E2-Ajr" firstAttribute="centerX" secondItem="JK1-II-zd1" secondAttribute="centerX" id="nnc-Cj-4DS"/>
-                            <constraint firstItem="lU3-bT-mko" firstAttribute="top" secondItem="8di-4U-0ha" secondAttribute="bottom" constant="40" id="uT6-Aq-bEF"/>
+                            <constraint firstItem="b3a-f6-ExK" firstAttribute="top" secondItem="8di-4U-0ha" secondAttribute="bottom" constant="40" id="p3L-7Z-Wtw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MQa-qY-Fgc"/>
                     </view>

@@ -67,6 +67,10 @@ class SyncViewController: UIViewController, SyncViewProtocol {
         presenter?.sharingButtonDidTouch()
     }
 
+    @IBAction func changeLogsButtonDidTouch() {
+        presenter?.changeLogsButtonDidTouch()
+    }
+
     @objc func signoutButtonDidTouch() {
         presenter?.signoutButtonDidTouch()
     }
