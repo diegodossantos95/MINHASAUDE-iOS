@@ -18,6 +18,7 @@
 		AF12258E235EA7CF00ECECB2 /* ChangeLogsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF12258D235EA7CF00ECECB2 /* ChangeLogsBuilder.swift */; };
 		AF122590235EA7DB00ECECB2 /* ChangeLogsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF12258F235EA7DB00ECECB2 /* ChangeLogsPresenter.swift */; };
 		AF122593235EAD7D00ECECB2 /* ChangeLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF122592235EAD7D00ECECB2 /* ChangeLog.swift */; };
+		AF122595236101E500ECECB2 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF122594236101E500ECECB2 /* Sharing.swift */; };
 		AF2038112309FDCA006A1ACD /* OnboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */; };
 		AF203813230A0FC2006A1ACD /* OnboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */; };
 		AF20381A230CE4F6006A1ACD /* HealthDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF203819230CE4F6006A1ACD /* HealthDataService.swift */; };
@@ -54,6 +55,7 @@
 		AF12258D235EA7CF00ECECB2 /* ChangeLogsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogsBuilder.swift; sourceTree = "<group>"; };
 		AF12258F235EA7DB00ECECB2 /* ChangeLogsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLogsPresenter.swift; sourceTree = "<group>"; };
 		AF122592235EAD7D00ECECB2 /* ChangeLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLog.swift; sourceTree = "<group>"; };
+		AF122594236101E500ECECB2 /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
 		AF2038102309FDCA006A1ACD /* OnboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPresenter.swift; sourceTree = "<group>"; };
 		AF203812230A0FC2006A1ACD /* OnboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardBuilder.swift; sourceTree = "<group>"; };
 		AF203819230CE4F6006A1ACD /* HealthDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataService.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AF122592235EAD7D00ECECB2 /* ChangeLog.swift */,
+				AF122594236101E500ECECB2 /* Sharing.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				AF203824230E33D2006A1ACD /* BackendService.swift in Sources */,
 				AFBC3A62235571DA009C6EA4 /* SharingViewController.swift in Sources */,
 				AF122590235EA7DB00ECECB2 /* ChangeLogsPresenter.swift in Sources */,
+				AF122595236101E500ECECB2 /* Sharing.swift in Sources */,
 				AFBC3A6823557201009C6EA4 /* SharingBuilder.swift in Sources */,
 				AF67DFD22304FCDF0046BB92 /* OnboardViewController.swift in Sources */,
 				AFBC3A66235571F7009C6EA4 /* SharingPresenter.swift in Sources */,

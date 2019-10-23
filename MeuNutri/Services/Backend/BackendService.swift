@@ -51,9 +51,18 @@ class BackendService {
         }
     }
 
-    func getSharings(completion: @escaping ([String]?, Error?) -> Void) {
+    func getSharings(completion: @escaping ([Sharing]?, Error?) -> Void) {
         firebaseFunctions.httpsCallable(FirebaseFunctionNames.getSharings.rawValue).call { (result, error) in
-            if let sharings = result?.data as? [String]? {
+            if let data = result?.data as? [[String: Any]] {
+                let sharings = data.compactMap { (sharing) -> Sharing? in
+                    if let name = sharing["name"] as? String,
+                        let access = sharing["access"] as? [String] {
+                        return Sharing(name: name, access: access)
+                    } else {
+                        return nil
+                    }
+                }
+
                 completion(sharings, nil)
             } else {
                 completion(nil, error)
@@ -67,8 +76,8 @@ class BackendService {
         }
     }
 
-    func addSharing(name: String, completion: @escaping (Error?) -> Void) {
-        firebaseFunctions.httpsCallable(FirebaseFunctionNames.addSharing.rawValue).call(["sharingId": name]) { (result, error) in
+    func addSharing(sharing: Sharing, completion: @escaping (Error?) -> Void) {
+        firebaseFunctions.httpsCallable(FirebaseFunctionNames.addSharing.rawValue).call(["sharing": sharing.asDictionary]) { (result, error) in
             completion(error)
         }
     }

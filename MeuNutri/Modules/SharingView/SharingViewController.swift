@@ -20,7 +20,7 @@ protocol SharingViewProtocol {
 
 class SharingViewController: UIViewController, SharingViewProtocol {
     var presenter: SharingPresenterProtocol?
-    private var sharings: [String] {
+    private var sharings: [Sharing] {
         return presenter?.sharings ?? []
     }
 
@@ -35,6 +35,8 @@ class SharingViewController: UIViewController, SharingViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
+
+        //TODO: add loading indicator
     }
 
     func sharingsDidLoad() {
@@ -42,7 +44,7 @@ class SharingViewController: UIViewController, SharingViewProtocol {
     }
 
     func sharingDidDelete() {
-        //TODO
+        sharingTableView.reloadData()
     }
 
     func sharingDidFailDelete() {
@@ -81,7 +83,10 @@ class SharingViewController: UIViewController, SharingViewProtocol {
                 return
             }
 
-            self?.presenter?.addSharing(id: text)
+            //TODO: get the access from a form
+            let sharing = Sharing(name: text, access: ["bodyMass"])
+
+            self?.presenter?.addSharing(sharing: sharing)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
 
@@ -107,8 +112,10 @@ extension SharingViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = sharingTableView.dequeueReusableCell(withIdentifier: "sharingCell")!
+        let sharing = sharings[indexPath.row]
 
-        cell.textLabel?.text = sharings[indexPath.row]
+        cell.textLabel?.text = sharing.name
+        cell.detailTextLabel?.text = presenter?.formatSharingCellDescription(sharing: sharing)
 
         return cell
     }

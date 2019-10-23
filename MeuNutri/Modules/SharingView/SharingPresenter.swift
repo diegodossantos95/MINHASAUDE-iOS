@@ -10,16 +10,17 @@ import UIKit
 
 protocol SharingPresenterProtocol {
     var view: (SharingViewProtocol & UIViewController)? { get set }
-    var sharings: [String] { get }
+    var sharings: [Sharing] { get }
 
     func viewWillAppear()
     func deleteSharing(index: Int)
-    func addSharing(id: String)
+    func addSharing(sharing: Sharing)
+    func formatSharingCellDescription(sharing: Sharing) -> String
 }
 
 class SharingPresenter: SharingPresenterProtocol {
     weak var view: (UIViewController & SharingViewProtocol)?
-    var sharings: [String] = []
+    var sharings: [Sharing] = []
 
     func viewWillAppear() {
         BackendService.shared.getSharings { [weak self] (mySharings, error) in
@@ -36,7 +37,7 @@ class SharingPresenter: SharingPresenterProtocol {
     func deleteSharing(index: Int) {
         let sharing = self.sharings.remove(at: index)
 
-        BackendService.shared.deleteSharing(name: sharing) { [weak self] (error) in
+        BackendService.shared.deleteSharing(name: sharing.name) { [weak self] (error) in
             if error != nil {
                 //TODO: revert the change...
                 print(error)
@@ -47,16 +48,20 @@ class SharingPresenter: SharingPresenterProtocol {
         }
     }
 
-    func addSharing(id: String) {
-        BackendService.shared.addSharing(name: id) { [weak self] (error) in
+    func addSharing(sharing: Sharing) {
+        BackendService.shared.addSharing(sharing: sharing) { [weak self] (error) in
             if error != nil {
                 //TODO: handle errors
                 print(error)
                 self?.view?.sharingDidFailAdd()
             } else {
-                self?.sharings.append(id)
+                self?.sharings.append(sharing)
                 self?.view?.sharingDidAdd()
             }
         }
+    }
+
+    func formatSharingCellDescription(sharing: Sharing) -> String {
+        return sharing.access.joined(separator: ", ")
     }
 }
