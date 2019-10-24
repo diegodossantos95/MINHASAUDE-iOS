@@ -14,7 +14,6 @@ protocol SharingPresenterProtocol {
 
     func viewWillAppear()
     func deleteSharing(index: Int)
-    func addSharing(sharing: Sharing)
     func formatSharingCellDescription(sharing: Sharing) -> String
 }
 
@@ -48,20 +47,15 @@ class SharingPresenter: SharingPresenterProtocol {
         }
     }
 
-    func addSharing(sharing: Sharing) {
-        BackendService.shared.addSharing(sharing: sharing) { [weak self] (error) in
-            if error != nil {
-                //TODO: handle errors
-                print(error)
-                self?.view?.sharingDidFailAdd()
+    func formatSharingCellDescription(sharing: Sharing) -> String {
+        let permissions = sharing.access.compactMap { (value) -> String? in
+            if let permission = SharingPermissions(rawValue: value) {
+                return permission.getText()
             } else {
-                self?.sharings.append(sharing)
-                self?.view?.sharingDidAdd()
+                return nil
             }
         }
-    }
 
-    func formatSharingCellDescription(sharing: Sharing) -> String {
-        return sharing.access.joined(separator: ", ")
+        return "Permission: \(permissions.joined(separator: ", "))" 
     }
 }

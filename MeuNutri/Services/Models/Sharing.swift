@@ -21,3 +21,16 @@ struct Sharing {
         return dict
     }
 }
+
+enum SharingPermissions: String {
+    case bodyMass, heartRate
+
+    func getText() -> String {
+        switch self {
+        case .bodyMass:
+            return "Body Mass"
+        case .heartRate:
+            return "Heart Rate"
+        }
+    }
+}

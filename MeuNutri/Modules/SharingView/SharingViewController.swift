@@ -48,7 +48,7 @@ class SharingViewController: UIViewController, SharingViewProtocol {
     }
 
     func sharingDidFailDelete() {
-        //TODO
+        sharingTableView.reloadData()
     }
 
     func sharingDidAdd() {
@@ -71,26 +71,8 @@ class SharingViewController: UIViewController, SharingViewProtocol {
 
     @objc
     private func addButtonDidTap() {
-        let alert = UIAlertController(title: "New Sharing", message: "Input the physician's email to share your health data.", preferredStyle:
-            .alert)
-
-        alert.addTextField { (textField) in
-            textField.placeholder = "Email"
-        }
-
-        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { [weak self] (action) in
-            guard let text = alert.textFields?[0].text else {
-                return
-            }
-
-            //TODO: get the access from a form
-            let sharing = Sharing(name: text, access: ["bodyMass"])
-
-            self?.presenter?.addSharing(sharing: sharing)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
-
-        self.present(alert, animated: true, completion: nil)
+        let sharingview = SharingFormBuilder().build()
+        present(sharingview, animated: true, completion: nil)
     }
 }
 

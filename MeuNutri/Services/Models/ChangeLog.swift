@@ -28,9 +28,9 @@ enum ChangeLogMesages: String {
         case .EXPIRATION_UPDATED:
             return "Expiration time updated."
         case .SHARING_ADDED:
-            return "Added a new physician email to share."
+            return "Added a new physician to share."
         case .SHARING_DELETED:
-            return "Deleted a physician email from sharing."
+            return "Deleted a physician from sharing."
         case .HEALTH_DATA_READ:
             return "Health data read."
         }
