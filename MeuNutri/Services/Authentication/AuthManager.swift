@@ -40,6 +40,8 @@ class AuthManager {
         authUI.providers = providers
 
         let authViewController = authUI.authViewController()
+        authViewController.modalPresentationStyle = .fullScreen
+        authViewController.navigationBar.topItem?.leftBarButtonItem = nil
         view.present(authViewController, animated: true, completion: nil)
     }
 }

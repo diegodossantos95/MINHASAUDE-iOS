@@ -14,6 +14,7 @@ protocol OnboardPresenterProtocol {
 
     func viewDidAppear()
     func loginDidFinish()
+    func loginDidFail()
 }
 
 class OnboardPresenter: OnboardPresenterProtocol {
@@ -36,6 +37,10 @@ class OnboardPresenter: OnboardPresenterProtocol {
             let syncView = SyncBuilder().build()
             self?.view?.present(syncView, animated: true, completion: nil)
         }
+    }
+
+    func loginDidFail() {
+        startLoginFlow()
     }
 
     private func startLoginFlow() {
