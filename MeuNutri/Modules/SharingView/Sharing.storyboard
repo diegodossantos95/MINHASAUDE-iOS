@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sharing View Controller-->
+        <!--Sharings-->
         <scene sceneID="DJI-Um-tCp">
             <objects>
-                <viewController storyboardIdentifier="SharingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VvT-kO-C8p" customClass="SharingViewController" customModule="MyHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SharingViewController" title="Sharings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VvT-kO-C8p" customClass="SharingViewController" customModule="MyHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cbY-Zc-rIB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

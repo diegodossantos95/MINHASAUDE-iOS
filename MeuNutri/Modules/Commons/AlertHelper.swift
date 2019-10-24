@@ -16,4 +16,22 @@ class AlertHelper {
             alert.dismiss(animated: true)
         }
     }
+
+    static func showConfirmation(title: String, message: String, rootView: UIViewController, completion: @escaping () -> Void) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        let ok = UIAlertAction(title: "Yes", style: .default, handler: { (action) -> Void in
+            completion()
+            alert.dismiss(animated: true, completion: nil)
+        })
+
+        let cancel = UIAlertAction(title: "No", style: .cancel, handler: { (action) -> Void in
+            alert.dismiss(animated: true, completion: nil)
+        })
+
+        alert.addAction(ok)
+        alert.addAction(cancel)
+
+        rootView.present(alert, animated: true, completion: nil)
+    }
 }

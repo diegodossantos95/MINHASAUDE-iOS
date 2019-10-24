@@ -53,12 +53,19 @@ class SyncPresenter: SyncPresenterProtocol {
     }
 
     func cancelButtonDidTouch() {
-        view?.startActivityIndicator()
-        SyncDataService.shared.removeHealthData { [weak self] (success) in
-            if !success {
-                self?.view?.showAlertView(message: "Failed to delete health data")
+        guard let view = view else {
+            return
+        }
+
+        AlertHelper.showConfirmation(title: "Confirm", message: "Are you sure you want to delete your health data from the cloud?", rootView: view) { [weak self] in
+            self?.view?.startActivityIndicator()
+            SyncDataService.shared.removeHealthData { [weak self] (success) in
+                if !success {
+                    self?.view?.showAlertView(message: "Failed to delete health data")
+                }
+                self?.view?.stopActivityIndicator()
             }
-            self?.view?.stopActivityIndicator()
+
         }
     }
 
@@ -77,7 +84,13 @@ class SyncPresenter: SyncPresenterProtocol {
     }
 
     func signoutButtonDidTouch() {
-        AuthManager.shared.doSignout()
+        guard let view = view else {
+            return
+        }
+
+        AlertHelper.showConfirmation(title: "Confirm", message: "Are you sure you want to signout?", rootView: view) { [weak self] in
+            AuthManager.shared.doSignout()
+        }
     }
 
     func changeLogsButtonDidTouch() {
