@@ -23,6 +23,7 @@ class ChangeLogsPresenter: ChangeLogsPresenterProtocol {
     var changeLogs: [ChangeLog] = []
 
     func viewWillAppear() {
+        view?.startActivityIndicator()
         BackendService.shared.getChangeLogs { [weak self] (changelogs, error) in
             if let changelogs = changelogs {
                 self?.changeLogs = changelogs.sorted(by: { $0.date.compare($1.date) == .orderedDescending })
@@ -31,6 +32,7 @@ class ChangeLogsPresenter: ChangeLogsPresenterProtocol {
                 //TODO: handle
                 print(error)
             }
+            self?.view?.stopActivityIndicator()
         }
     }
 

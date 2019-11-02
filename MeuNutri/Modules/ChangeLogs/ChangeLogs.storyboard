@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,17 +46,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="1kY-J2-Agq">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="1kY-J2-Agq" firstAttribute="centerY" secondItem="G8s-vG-Sqh" secondAttribute="centerY" id="IeF-QS-U2W"/>
                             <constraint firstItem="IDT-k7-wWc" firstAttribute="trailing" secondItem="Qht-Cp-joz" secondAttribute="trailing" id="Q7V-AU-hdV"/>
                             <constraint firstItem="Qht-Cp-joz" firstAttribute="leading" secondItem="IDT-k7-wWc" secondAttribute="leading" id="Un4-bm-kj7"/>
                             <constraint firstItem="IDT-k7-wWc" firstAttribute="bottom" secondItem="Qht-Cp-joz" secondAttribute="bottom" id="a2I-fx-UYN"/>
                             <constraint firstItem="Qht-Cp-joz" firstAttribute="top" secondItem="IDT-k7-wWc" secondAttribute="top" id="iN8-g2-PIB"/>
+                            <constraint firstItem="1kY-J2-Agq" firstAttribute="centerX" secondItem="G8s-vG-Sqh" secondAttribute="centerX" id="tKq-6f-0Hs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IDT-k7-wWc"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="1kY-J2-Agq" id="HN8-Px-6tn"/>
                         <outlet property="changeLogsTableView" destination="Qht-Cp-joz" id="V7E-0r-ic5"/>
                     </connections>
                 </viewController>

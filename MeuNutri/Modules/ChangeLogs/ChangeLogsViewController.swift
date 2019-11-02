@@ -12,6 +12,8 @@ protocol ChangeLogsViewProtocol {
     var presenter: ChangeLogsPresenterProtocol? { get set }
 
     func changeLogsDidLoad()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 class ChangeLogsViewController: UIViewController, ChangeLogsViewProtocol {
@@ -21,6 +23,7 @@ class ChangeLogsViewController: UIViewController, ChangeLogsViewProtocol {
     }
 
     @IBOutlet weak var changeLogsTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,14 @@ class ChangeLogsViewController: UIViewController, ChangeLogsViewProtocol {
 
     func changeLogsDidLoad() {
         changeLogsTableView.reloadData()
+    }
+
+    func startActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
 
     // Private funcs
