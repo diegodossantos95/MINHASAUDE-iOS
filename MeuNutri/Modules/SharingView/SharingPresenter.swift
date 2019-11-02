@@ -22,6 +22,7 @@ class SharingPresenter: SharingPresenterProtocol {
     var sharings: [Sharing] = []
 
     func viewWillAppear() {
+        view?.startActivityIndicator()
         BackendService.shared.getSharings { [weak self] (mySharings, error) in
             if let sharings = mySharings {
                 self?.sharings = sharings
@@ -30,11 +31,13 @@ class SharingPresenter: SharingPresenterProtocol {
                 //TODO: handle errors
                 print(error)
             }
+            self?.view?.stopActivityIndicator()
         }
     }
 
     func deleteSharing(index: Int) {
         let sharing = self.sharings.remove(at: index)
+        view?.startActivityIndicator()
 
         BackendService.shared.deleteSharing(name: sharing.name) { [weak self] (error) in
             if error != nil {
@@ -44,6 +47,7 @@ class SharingPresenter: SharingPresenterProtocol {
             } else {
                 self?.view?.sharingDidDelete()
             }
+            self?.view?.stopActivityIndicator()
         }
     }
 

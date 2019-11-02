@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,23 +46,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="s7B-vk-YWi">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="EQY-9g-blT" firstAttribute="leading" secondItem="l1v-hk-DNa" secondAttribute="leading" id="4S1-0l-2Bg"/>
                             <constraint firstItem="l1v-hk-DNa" firstAttribute="bottom" secondItem="EQY-9g-blT" secondAttribute="bottom" id="99E-on-vrj"/>
+                            <constraint firstItem="s7B-vk-YWi" firstAttribute="centerY" secondItem="cbY-Zc-rIB" secondAttribute="centerY" id="SG0-5t-26k"/>
+                            <constraint firstItem="s7B-vk-YWi" firstAttribute="centerX" secondItem="cbY-Zc-rIB" secondAttribute="centerX" id="khA-4L-F3R"/>
                             <constraint firstItem="EQY-9g-blT" firstAttribute="top" secondItem="l1v-hk-DNa" secondAttribute="top" id="o3Z-fr-3cM"/>
                             <constraint firstItem="l1v-hk-DNa" firstAttribute="trailing" secondItem="EQY-9g-blT" secondAttribute="trailing" id="wFs-YI-ROS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l1v-hk-DNa"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="s7B-vk-YWi" id="cEu-kC-VHu"/>
                         <outlet property="sharingTableView" destination="EQY-9g-blT" id="cVg-M1-WI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qxn-tL-lfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9830" y="621"/>
+            <point key="canvasLocation" x="-9830.434782608696" y="620.75892857142856"/>
         </scene>
     </scenes>
 </document>

@@ -16,6 +16,8 @@ protocol SharingViewProtocol {
     func sharingDidFailDelete()
     func sharingDidAdd()
     func sharingDidFailAdd()
+    func startActivityIndicator()
+    func stopActivityIndicator()
 }
 
 class SharingViewController: UIViewController, SharingViewProtocol {
@@ -25,7 +27,8 @@ class SharingViewController: UIViewController, SharingViewProtocol {
     }
 
     @IBOutlet weak var sharingTableView: UITableView!
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -57,6 +60,14 @@ class SharingViewController: UIViewController, SharingViewProtocol {
 
     func sharingDidFailAdd() {
         //TODO
+    }
+
+    func startActivityIndicator() {
+        activityIndicator.startAnimating()
+    }
+
+    func stopActivityIndicator() {
+        activityIndicator.stopAnimating()
     }
 
     // Private funcs
