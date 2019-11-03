@@ -50,29 +50,17 @@ class SyncViewController: UIViewController, SyncViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let signoutButton = UIBarButtonItem(title: "Signout", style: .plain, target: self, action: #selector(signoutButtonDidTouch))
-        signoutButton.tintColor = .systemRed
-        navigationItem.rightBarButtonItems = [signoutButton]
+        let settingsButton = UIBarButtonItem(title: "Options", style: .plain, target: self, action: #selector(settingsButtonDidTouch))
+
+        navigationItem.rightBarButtonItems = [settingsButton]
     }
 
     @IBAction func syncButtonDidTouch() {
         presenter?.syncButtonDidTouch()
     }
 
-    @IBAction func cancelButtonDidTouch() {
-        presenter?.cancelButtonDidTouch()
-    }
-
-    @IBAction func sharingsButtonDidTouch() {
-        presenter?.sharingButtonDidTouch()
-    }
-
-    @IBAction func changeLogsButtonDidTouch() {
-        presenter?.changeLogsButtonDidTouch()
-    }
-
-    @objc func signoutButtonDidTouch() {
-        presenter?.signoutButtonDidTouch()
+    @objc func settingsButtonDidTouch() {
+        presenter?.settingsButtonDidTouch()
     }
 
     func startActivityIndicator() {

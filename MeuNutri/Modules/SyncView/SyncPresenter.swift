@@ -14,11 +14,8 @@ protocol SyncPresenterProtocol {
 
     func viewWillAppear()
     func syncButtonDidTouch()
-    func cancelButtonDidTouch()
-    func sharingButtonDidTouch()
-    func signoutButtonDidTouch()
+    func settingsButtonDidTouch()
     func expirationDropdownDidUpdate(value: Int)
-    func changeLogsButtonDidTouch()
 }
 
 class SyncPresenter: SyncPresenterProtocol {
@@ -52,28 +49,6 @@ class SyncPresenter: SyncPresenterProtocol {
         }
     }
 
-    func cancelButtonDidTouch() {
-        guard let view = view else {
-            return
-        }
-
-        AlertHelper.showConfirmation(title: "Confirm", message: "Are you sure you want to delete your health data from the cloud?", rootView: view) { [weak self] in
-            self?.view?.startActivityIndicator()
-            SyncDataService.shared.removeHealthData { [weak self] (success) in
-                if !success {
-                    self?.view?.showAlertView(message: "Failed to delete health data")
-                }
-                self?.view?.stopActivityIndicator()
-            }
-
-        }
-    }
-
-    func sharingButtonDidTouch() {
-        let sharingView = SharingBuilder().build()
-        self.view?.navigationController?.pushViewController(sharingView, animated: true)
-    }
-
     func expirationDropdownDidUpdate(value: Int) {
         BackendService.shared.updateExpiration(value: value) { (error) in
             if let error = error {
@@ -83,19 +58,9 @@ class SyncPresenter: SyncPresenterProtocol {
         }
     }
 
-    func signoutButtonDidTouch() {
-        guard let view = view else {
-            return
-        }
-
-        AlertHelper.showConfirmation(title: "Confirm", message: "Are you sure you want to signout?", rootView: view) { [weak self] in
-            AuthManager.shared.doSignout()
-        }
-    }
-
-    func changeLogsButtonDidTouch() {
-        let changeLogsView = ChangeLogsBuilder().build()
-        self.view?.navigationController?.pushViewController(changeLogsView, animated: true)
+    func settingsButtonDidTouch() {
+        let view = SettingsBuilder().build()
+        self.view?.navigationController?.pushViewController(view, animated: true)
     }
 
     //Private func
